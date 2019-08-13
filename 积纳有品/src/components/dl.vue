@@ -1,25 +1,44 @@
 <template>
   <div class="aa">
-    <div class="dl">
+    <div class="dl" v-for="(item,index) in dl" :key="index" @click='detail(item)'>
       <div class="dt">
-        <img
-          src="https://jnup.oss-cn-beijing.aliyuncs.com/web/uploads/image/store_1/f957bc59e14afd4f251d79ce086d5d0270bb13c6.jpg?x-oss-process=style/small"
-        />
+        <img :src="item.imgUrl" />
       </div>
-      <div class="title">澳洲直邮 QV 意高小老虎保湿面霜 250g 包邮</div>
-      <div class="pic">￥75</div>
+      <div class="title">{{item.title}}</div>
+      <div class="pic">{{item.salesPrice}}</div>
     </div>
   </div>
 </template>
 <script>
+import { mapState, mapMutations, mapActions } from "vuex";
 export default {
-  props: {},
+  props: {
+    dl: {
+      type: Array,
+      default: []
+    }
+  },
   components: {},
   data() {
     return {};
   },
   computed: {},
-  methods: {},
+  methods: {
+    ...mapActions({
+      getDetailData: "home/getDetailData",
+      getDetailNum: "home/getDetailNum",
+      getDetailImg: "home/getDetailImg",
+      getDetailDq: "home/getDetailDq"
+    }),
+    detail(item){
+      let id=item.jumpUrl.split("product")[1].split("&")[1].split("=")[1]
+      this.getDetailData(id)
+      this.getDetailNum()
+      this.getDetailImg()
+      this.getDetailDq()
+      wx.navigateTo({ url: "searchDetail/main" });
+    }
+  },
   created() {},
   mounted() {}
 };
@@ -53,8 +72,9 @@ export default {
       text-overflow: -o-ellipsis-lastline;
       overflow: hidden;
       text-overflow: ellipsis;
+      display: -webkit-box;
       -webkit-line-clamp: 2;
-      line-clamp: 2;
+      -webkit-box-orient: vertical;
     }
     .pic {
       font-size: 28rpx;
