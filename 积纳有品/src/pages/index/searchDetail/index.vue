@@ -2,83 +2,61 @@
   <div class="searchDetail">
     <swiper class="u-wrp-bnr" autoplay="true">
       <swiper-item class="u-item">
-        <image :src='detail.mainImgUrl'></image>
+        <image src='https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=416883042,2446087554&fm=26&gp=0.jpg' class='u-img-slide' mode='aspectFill'></image>
+      </swiper-item>
+      <swiper-item class="u-item">
+        <image src='https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2328966754,873353896&fm=26&gp=0.jpg' class='u-img-slide' mode='aspectFill'></image>
+      </swiper-item>
+      <swiper-item class="u-item">
+        <image src='https://f11.baidu.com/it/u=1328175307,1706219131&fm=72' class='u-img-slide' mode='aspectFill'></image>
       </swiper-item>
     </swiper>
     <div class="detMoney">
-      <span>￥{{detail.salesPrice}}</span>
-      <span>{{detail.vipPrice}}</span>
-      <img src="../../../../static/images/黑卡.svg"/>
+      <span>￥85</span>
+      <span>83.02</span>
       <p>
         分享赚
-        <span>{{detail.earnMoney}}</span>
+        <span>1.98</span>
       </p>
     </div>
     <div class="detTit">
-      <P>{{detail.title}}</P>
+      <P>Carters's女童长袖印花+短袖T恤+裤子套装6个月</P>
       <b>快递包邮</b>
     </div>
     <div class="detChoose">
       <div class="chooseLeft">
-        <label class="_span">选择</label>
-        <div class="_div">
-          <label class="_span">数量</label>
-          <label class="_span">
-            <label class="_spans">1件</label>
-            <label>></label>
-          </label>
-        </div>
+        <p>选择</p>
+        <p>颜色</p>
+        <p>尺码</p>
       </div>
-      <div class="ts">
-        <label class="_span">提示</label>
-        <div class="dq">
-          <label class="_span">{{dq}}</label>
-        </div>
-      </div>
-      <div class="chooseRight"></div>
-    </div>
-    <div class="images">
-      <img v-for="(item,index) in img" 
-      :key="index"
-      :src="item.imgUrl"
-      class="img"
-      />
+      <div class="chooseRight">></div>
     </div>
     <div class="btns">
       <p>
         分享赚
-        <span>{{detail.earnMoney}}</span>
+        <span>1.98</span>
       </p>
       <p>立即购买</p>
     </div>
   </div>
 </template>
 <script>
-import {mapState} from 'vuex'
 export default {
   props: {},
   components: {},
   data() {
     return {};
   },
-  computed: {
-    ...mapState({
-      detail:state => state.home.detail,
-      num:state => state.home.num,
-      img:state => state.home.img,
-      dq:state => state.home.dq
-    })
-  },
+  computed: {},
   methods: {},
   created() {},
   mounted() {}
 };
 </script>
-<style scoped lang="scss">
+<style scoped lang="">
 .searchDetail {
   width: 100%;
   height: 100%;
-  overflow-y: auto;
 }
 .u-wrp-bnr {
   width: 100%;
@@ -100,14 +78,6 @@ export default {
   width: 100%;
   height: 100rpx;
   display: flex;
-  img{
-    width: 40rpx;
-    height: 20rpx;
-    margin-top: 44rpx;
-    margin-left: 10rpx;
-    display: inline-block;
-    overflow: hidden;
-  }
 }
 .detMoney > span:nth-child(1) {
   height: 100%;
@@ -155,73 +125,21 @@ export default {
   margin-left: 2%;
 }
 .detChoose {
-  width: 100%;
-  padding: 0 2%;
-  box-sizing: border-box;
-  .ts{
-    display: flex;
-    font-size: 26rpx;
-    height: 80rpx;
-    line-height: 80rpx;
-    >._span{
-      color: #676767;
-    }
-    .dq{
-      flex: 1;
-      color: #323a45;
-      display: flex;
-      padding: 0 10rpx;
-      box-sizing: border-box;
-      justify-content: space-between;
-      >._span{
-        color: #fc5d7b;
-      }
-    }
-  }
+  margin-left: 2%;
+  width: 96%;
+  height: 50rpx;
+  line-height: 50rpx;
+  display: flex;
+  justify-content: space-between;
+  color: #999;
+  font-size: 25rpx;
+  margin-top: 40rpx;
 }
 .chooseLeft {
   display: flex;
-  font-size: 26rpx;
-  height: 80rpx;
-  line-height: 80rpx;
-  >._span{
-    color: #676767;
-  }
-  ._div{
-    flex: 1;
-    color: #323a45;
-    display: flex;
-    padding: 0 10rpx;
-    box-sizing: border-box;
-    justify-content: space-between;
-    >._span{
-      color: #676767;
-      margin-right: 5px;
-      ._spans{
-        color: #676767;
-      }
-      .img{
-        width: 20rpx;
-        height: 20rpx;
-        margin-top: 20rpx;
-        display: inline-block;
-        overflow: hidden;
-      }
-    }
-  }
 }
-.images{
-  width: 100%;
-  margin-bottom: 120rpx;
-  .img{
-    width: 100%;
-    display: block;
-    height: 240px;
-    overflow: hidden;
-  }
-  :last-child{
-    height: 1280.64px;
-  }
+.chooseLeft > p {
+  margin-right: 15rpx;
 }
 .btns {
   position: fixed;

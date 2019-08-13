@@ -6,6 +6,7 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
+<<<<<<< HEAD
 		"coverView": true,
 		"autoAudits": false,
 		"checkInvalidKey": true,
@@ -16,6 +17,10 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		}
+=======
+		"autoAudits": false,
+		"checkInvalidKey": true
+>>>>>>> f3ea85cc00c82c9e329b2effbbd7918accc2a2be
 	},
 	"miniprogramRoot": "dist/wx/",
 	"compileType": "miniprogram",

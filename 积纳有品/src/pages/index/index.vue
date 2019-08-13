@@ -182,6 +182,11 @@ export default {
       background: #eee;
     }
   }
+  ::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
   ._scroll {
     width: 100%;
     display: flex;
