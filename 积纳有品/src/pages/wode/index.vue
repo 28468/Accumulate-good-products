@@ -1,8 +1,4 @@
 <template>
-<<<<<<< HEAD
-  <div>
-   我的
-=======
   <div class="mine">
      <div class="topimg">
        <img src='/static/images/logBg.png'/>
@@ -45,17 +41,10 @@
         </ol>
      </div>
   
->>>>>>> sxn
   </div>
 </template>
 <script>
 export default {
-<<<<<<< HEAD
-  props:{
-
-  },
-=======
->>>>>>> sxn
   components:{
 
   },
@@ -63,25 +52,6 @@ export default {
     return {
 
     }
-<<<<<<< HEAD
-  },
-  computed:{
-
-  },
-  methods:{
-
-  },
-  created(){
-
-  },
-  mounted(){
-
-  }
-}
-</script>
-<style scoped lang="">
-
-=======
   }
  
 }
@@ -150,5 +120,4 @@ export default {
   height: 40rpx;
   margin-right: 20rpx;
 }
->>>>>>> sxn
 </style>
