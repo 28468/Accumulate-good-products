@@ -191,6 +191,7 @@ export default {
     white-space: nowrap;
     height: 100rpx;
     background: #fff;
+    overflow-x: auto;
     ._li {
       font-size: 32rpx;
       display: inline-block;
