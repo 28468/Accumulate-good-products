@@ -1,5 +1,6 @@
 {
   "pages": [
+
      "pages/wode/person/main",
     "pages/index/main",
     "pages/index/topic/main",
@@ -10,7 +11,8 @@
     "pages/wode/addressDetail/main",
     "pages/wode/conect/main",
     "pages/wode/address/main",
-    "pages/wode/card/main"
+    "pages/wode/card/main",
+    "pages/wode/prove/main"
    
   ],
   "window": {
