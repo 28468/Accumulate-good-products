@@ -10,7 +10,8 @@
     "pages/wode/conect/main",
     "pages/wode/address/main",
     "pages/wode/card/main",
-    "pages/wode/person/main"
+    "pages/wode/person/main",
+    "pages/wode/prove/main"
   ],
   "window": {
     "backgroundTextStyle": "light",

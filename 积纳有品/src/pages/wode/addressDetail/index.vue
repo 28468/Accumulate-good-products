@@ -53,6 +53,7 @@ export default {
    align-items:center;
  }
  textarea{
+   padding-top: 15px;
    padding-left:10px;
    box-sizing:border-box;
  }
@@ -69,10 +70,10 @@ export default {
    margin-top:20px;
  }
  .label span{
-   padding:5px 20px;
+   padding:3px 20px;
    box-sizing:border-box;
    border:1px solid #ccc;
-   border-radius:10px;
+   border-radius:15px;
    margin-left:20rpx;
 
  }
