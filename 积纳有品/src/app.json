@@ -3,7 +3,8 @@
     "pages/index/main",
     "pages/index/topic/main",
     "pages/wode/main",
-    "pages/shopCar/main"
+    "pages/shopCar/main",
+    "pages/wode/prove/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
