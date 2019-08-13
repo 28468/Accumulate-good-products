@@ -1,10 +1,22 @@
 {
   "pages": [  
+<<<<<<< HEAD
     "pages/index/main",
     "pages/wode/main",
     "pages/shopCar/main",
     "pages/index/searchDetail/main",
     "pages/index/classify/main"
+=======
+    "pages/addressDetail/main",
+    "pages/conect/main",
+    "pages/address/main",
+    "pages/card/main",
+    "pages/person/main",
+    "pages/wode/main",
+    "pages/index/main"
+
+
+>>>>>>> sxn
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -17,9 +29,12 @@
       "pagePath": "pages/index/main",
       "text": "首页"
     }, {
+<<<<<<< HEAD
       "pagePath": "pages/shopCar/main",
       "text": "购物车"
     }, {
+=======
+>>>>>>> sxn
       "pagePath": "pages/wode/main",
       "text": "我的"
     }]

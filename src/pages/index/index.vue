@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div class="wrapper">
     <div class="search">
       <input placeholder="搜索" />
@@ -345,4 +346,39 @@ overflow:hidden;
     }
   }
 }
+=======
+  <div>
+   首页
+  </div>
+</template>
+<script>
+export default {
+  props:{
+
+  },
+  components:{
+
+  },
+  data(){
+    return {
+
+    }
+  },
+  computed:{
+
+  },
+  methods:{
+
+  },
+  created(){
+
+  },
+  mounted(){
+
+  }
+}
+</script>
+<style scoped lang="">
+
+>>>>>>> sxn
 </style>

@@ -1,10 +1,7 @@
 import Vue from 'vue'
 import App from './index'
-<<<<<<< HEAD
-=======
 
 // add this to handle exception
->>>>>>> sxn
 Vue.config.errorHandler = function (err) {
   if (console && console.error) {
     console.error(err)
