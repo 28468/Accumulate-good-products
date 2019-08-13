@@ -1,13 +1,14 @@
 {
   "pages": [  
-    "pages/wode/mine/main",
     "pages/wode/addressDetail/main",
     "pages/wode/conect/main",
     "pages/wode/address/main",
     "pages/wode/card/main",
     "pages/wode/person/main",
-    "pages/index/main",
-    "pages/shopCar/main"
+    "pages/wode/main",
+    "pages/index/main"
+
+
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -20,7 +21,7 @@
       "pagePath": "pages/index/main",
       "text": "首页"
     }, {
-      "pagePath": "pages/wode/mine/main",
+      "pagePath": "pages/wode/main",
       "text": "我的"
     }]
   }
