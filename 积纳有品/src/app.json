@@ -1,10 +1,17 @@
 {
   "pages": [
+     "pages/wode/person/main",
     "pages/index/main",
     "pages/index/topic/main",
     "pages/wode/main",
     "pages/shopCar/main",
-    "pages/wode/prove/main"
+    "pages/index/searchDetail/main",
+    "pages/index/classify/main",
+    "pages/wode/addressDetail/main",
+    "pages/wode/conect/main",
+    "pages/wode/address/main",
+    "pages/wode/card/main"
+   
   ],
   "window": {
     "backgroundTextStyle": "light",

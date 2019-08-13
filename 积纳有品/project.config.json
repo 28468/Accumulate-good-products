@@ -31,19 +31,48 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 5,
 			"list": [
 				{
 					"id": -1,
-					"name": "首页专题",
+					"name": "专题页面",
 					"pathName": "pages/index/topic/main",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "身份认证",
-					"pathName": "pages/wode/prove/main",
+					"name": "个人中心",
+					"pathName": "pages/wode/main",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/shopCar/main",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商品详情",
+					"pathName": "pages/index/searchDetail/main",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "分类",
+					"pathName": "pages/index/classify/main",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/index/main",
+					"query": "",
 					"scene": null
 				}
 			]
