@@ -1,21 +1,24 @@
 <template>
   <div class="lists">
-    <div class="content">
+    <div class="content" 
+    v-for="(item,index) in list"
+    :key="index"
+    >
       <div class="img">
         <img
-          src="https://jnup.oss-cn-beijing.aliyuncs.com/product/84852700227bcdfd5503c0f8ae570c41.jpg?x-oss-process=style/small"
+          :src="item.productVo.mainImgUrl"
         />
       </div>
       <div class="details">
-        <div class="title">涤尚洗衣片吸色片洗衣片防串色色母片机洗手洗浓缩24片/盒*3 送洗碗巾2盒</div>
+        <div class="title">{{item.productVo.title}}</div>
         <div class="free">
           <label class="_span">包邮</label>
           <label class="_span">包税</label>
         </div>
         <div class="pics">
           <label class="p">￥</label>
-          <label class="pi">89</label>
-          <label class="ppp">￥77.08</label>
+          <label class="pi">{{item.productVo.salesPrice}}</label>
+          <label class="ppp">￥{{item.productVo.vipPrice}}</label>
           <img src="/static/images/vip.svg" />
           <label class="zp">赚￥11.92</label>
         </div>
@@ -25,7 +28,12 @@
 </template>
 <script>
 export default {
-  props: {},
+  props: {
+    list: {
+      type: Array,
+      default: []
+    }
+  },
   components: {},
   data() {
     return {};
