@@ -1,7 +1,6 @@
 {
   "pages": [
-
-     "pages/wode/person/main",
+    "pages/wode/person/main",
     "pages/index/main",
     "pages/index/topic/main",
     "pages/wode/main",

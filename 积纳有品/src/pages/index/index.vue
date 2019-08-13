@@ -27,7 +27,7 @@
             </swiper>
         </div>
         <div class="conter-nav">
-          <dl>
+          <dl @click="tab">
             <dt>
               <img
                 src="https://jnup.oss-cn-beijing.aliyuncs.com/product/a01c35e1ce24fa20ef3c0b23648b978e.png"
@@ -35,7 +35,7 @@
             </dt>
             <dd>会员专区</dd>
           </dl>
-          <dl>
+          <dl >
             <dt>
               <img
                 src="https://jnup.oss-cn-beijing.aliyuncs.com/product/f60f568d90ddea99ec297ea17d65bf98.png"
@@ -154,19 +154,27 @@
 <script>
 import homeDl from "../../components/dl";
 import homeList from '../../components/list'
+import {mapState,mapActions,mapMutations} from 'vuex';
 export default {
   props: {},
   components: {
-    homeDl,
-    homeList
+     homeDl,
+     homeList
   },
   data() {
     return {};
   },
   computed: {},
-  methods: {},
-  created() {},
-  mounted() {}
+  methods: {
+     ...mapMutations({
+         getList:'shouTab/getList'
+      }),
+      tab(){
+       wx.navigateTo({ url: "../../pages/index/topic/main" }) 
+      }
+    },
+   created() {},
+   mounted() {}
 };
 </script>
 <style scoped lang="scss">
@@ -222,12 +230,12 @@ export default {
         box-sizing: border-box;
        .u-wrp-bnr{
          width:100%;
-height:39.5vw;
-box-sizing:border-box;
-display: block;
+         height:39.5vw;
+         box-sizing:border-box;
+         display: block;
      .u-item{
        position:absolute;
-width:100%;
+       width:100%;
 height:100%;
 transform:translate(0%, 0px) translateZ(0px);
  display:block;
