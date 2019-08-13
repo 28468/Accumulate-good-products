@@ -1,6 +1,7 @@
 <template>
-  <div>
+  <div class="wrapper">
    购物车
+    
   </div>
 </template>
 <script>
@@ -30,6 +31,6 @@ export default {
   }
 }
 </script>
-<style scoped lang="">
+<style scoped lang="scss">
 
 </style>
