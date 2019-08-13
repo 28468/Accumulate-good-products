@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <div class="search">
-      <input placeholder="搜索" />
+      <input placeholder="搜索" disabled/>
     </div>
     <nav class="_scroll">
       <li class="_li active">今日推荐</li>
