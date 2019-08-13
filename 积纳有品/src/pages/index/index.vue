@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <div class="search">
-      <input placeholder="搜索" />
+      <input placeholder="搜索" disabled/>
     </div>
     <nav class="_scroll">
       <li class="_li active">今日推荐</li>
@@ -185,12 +185,19 @@ export default {
       background: #eee;
     }
   }
+  ::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
   ._scroll {
     width: 100%;
     display: flex;
     white-space: nowrap;
     height: 100rpx;
     background: #fff;
+    overflow-x: auto;
+    
     ._li {
       font-size: 32rpx;
       display: inline-block;
