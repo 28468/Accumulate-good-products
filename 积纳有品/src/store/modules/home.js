@@ -65,6 +65,7 @@ const mutations = {
 const actions = {
     async getData({commit},payload) {
         let data = await getHomeData()
+        console.log("data...",data)
         commit('gethData',data.result)
     },
     async getNavData({commit,state},payload) {
