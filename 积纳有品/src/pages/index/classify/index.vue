@@ -2,73 +2,15 @@
   <div class="wrap">
     <div class="header">
       <p>今日推荐</p>
-      <p>奶粉</p>
-      <p class="active">尿不湿</p>
-      <p>户外运动</p>
-      <p>家居生活</p>
-      <p>母婴专场</p>
-      <p>母婴专场</p>
+      <p v-for='(item,index) in topList' :key='index' :class="[index===number?'active':'null']" @click="topTab(index,item)">{{item.cname}}</p>
+      <!-- <p class="active">尿不湿</p>  -->
     </div>
     <div class="top">
-      <dl>
+      <dl v-for="(item,index) in topList[number].childs" :key="index">
         <dt>
-          <img
-            class="img"
-            src="https://jnup.oss-cn-beijing.aliyuncs.com/product/31ded989e831caeaca75e157ecff4031.png"
-            alt
-          />
+          <img class="img" :src="item.imgUrl" />
         </dt>
-        <dd>纸尿裤</dd>
-      </dl>
-       <dl>
-        <dt>
-          <img
-            class="img"
-            src="https://jnup.oss-cn-beijing.aliyuncs.com/product/31ded989e831caeaca75e157ecff4031.png"
-            alt
-          />
-        </dt>
-        <dd>纸尿裤</dd>
-      </dl>
-       <dl>
-        <dt>
-          <img
-            class="img"
-            src="https://jnup.oss-cn-beijing.aliyuncs.com/product/31ded989e831caeaca75e157ecff4031.png"
-            alt
-          />
-        </dt>
-        <dd>纸尿裤</dd>
-      </dl>
-       <dl>
-        <dt>
-          <img
-            class="img"
-            src="https://jnup.oss-cn-beijing.aliyuncs.com/product/31ded989e831caeaca75e157ecff4031.png"
-            alt
-          />
-        </dt>
-        <dd>纸尿裤</dd>
-      </dl>
-       <dl>
-        <dt>
-          <img
-            class="img"
-            src="https://jnup.oss-cn-beijing.aliyuncs.com/product/31ded989e831caeaca75e157ecff4031.png"
-            alt
-          />
-        </dt>
-        <dd>纸尿裤</dd>
-      </dl>
-       <dl>
-        <dt>
-          <img
-            class="img"
-            src="https://jnup.oss-cn-beijing.aliyuncs.com/product/31ded989e831caeaca75e157ecff4031.png"
-            alt
-          />
-        </dt>
-        <dd>纸尿裤</dd>
+        <dd>{{item.cname}}</dd>
       </dl>
     </div>
     <div class="section">
@@ -79,88 +21,86 @@
         <div>
           <p>最新</p>
         </div>
-        <div>
+        <div @click="sort" class="sorts">
           <p>综合</p>
-          <span class="shang actives">△</span>
-          <span class="xia">▽</span>
+          <span :class="[flag===true?'shangs':'shang']">△</span>
+          <span :class="[flag===false?'xias':'xia']">▽</span>
         </div>
       </div>
       <div class="section-main">
-        <dl class="list">
-          <dt> <img class="list-img" src="http://haitao.nos.netease.com/10157adbb13d420ba507cc35665b029c1543044673592jov4yi3i11356.jpg" alt=""></dt>
+        <dl class="list" v-for="(item,index) in list" :key="index">
+          <dt>
+            <img class="list-img" :src="item.productVo.mainImgUrl" alt />
+          </dt>
           <dd>
-            <p class="title">这是一首简单的小情歌 唱出人们心中的感动</p>
-             <span class="main-box">包邮</span>
-             <div class="main-price">  
-               <p class="price">￥<span>22.90</span></p>
-               <p class="price-vip">￥<span>18.88</span></p>
-               <img class="vip" src="/static/images/vip.svg" alt="">
-             </div>
+            <p class="title">{{item.productVo.title}}</p>
+            <span class="main-box">包邮</span>
+            <div class="main-price">
+              <p class="price">
+                ￥
+                <span>{{item.productVo.salesPrice}}</span>
+              </p>
+              <p class="price-vip">
+                ￥
+                <span>{{item.productVo.vipPrice}}</span>
+              </p>
+              <img class="vip" src="/static/images/vip.svg" alt />
+            </div>
           </dd>
         </dl>
-        <dl class="list">
-          <dt> <img class="list-img" src="http://haitao.nos.netease.com/10157adbb13d420ba507cc35665b029c1543044673592jov4yi3i11356.jpg" alt=""></dt>
-          <dd>
-            <p class="title">这是一首简单的小情歌 唱出人们心中的感动</p>
-             <span class="main-box">包邮</span>
-             <div class="main-price">  
-               <p class="price">￥<span>22.90</span></p>
-               <p class="price-vip">￥<span>18.88</span></p>
-               <img class="vip" src="/static/images/vip.svg" alt="">
-             </div>
-          </dd>
-        </dl>
-        <dl class="list">
-          <dt> <img class="list-img" src="http://haitao.nos.netease.com/10157adbb13d420ba507cc35665b029c1543044673592jov4yi3i11356.jpg" alt=""></dt>
-          <dd>
-            <p class="title">这是一首简单的小情歌 唱出人们心中的感动</p>
-             <span class="main-box">包邮</span>
-             <div class="main-price">  
-               <p class="price">￥<span>22.90</span></p>
-               <p class="price-vip">￥<span>18.88</span></p>
-               <img class="vip" src="/static/images/vip.svg" alt="">
-             </div>
-          </dd>
-        </dl>
-        <dl class="list">
-          <dt> <img class="list-img" src="http://haitao.nos.netease.com/10157adbb13d420ba507cc35665b029c1543044673592jov4yi3i11356.jpg" alt=""></dt>
-          <dd>
-            <p class="title">这是一首简单的小情歌 唱出人们心中的感动</p>
-             <span class="main-box">包邮</span>
-             <div class="main-price">  
-               <p class="price">￥<span>22.90</span></p>
-               <p class="price-vip">￥<span>18.88</span></p>
-               <img class="vip" src="/static/images/vip.svg" alt="">
-             </div>
-          </dd>
-        </dl>
-           <dl class="list">
-          <dt> <img class="list-img" src="http://haitao.nos.netease.com/10157adbb13d420ba507cc35665b029c1543044673592jov4yi3i11356.jpg" alt=""></dt>
-          <dd>
-            <p class="title">这是一首简单的小情歌 唱出人们心中的感动</p>
-             <span class="main-box">包邮</span>
-             <div class="main-price">  
-               <p class="price">￥<span>22.90</span></p>
-               <p class="price-vip">￥<span>18.88</span></p>
-               <img class="vip" src="/static/images/vip.svg" alt="">
-             </div>
-          </dd>
-        </dl>
-        
       </div>
     </div>
   </div>
 </template>
 <script>
+import { mapState, mapActions } from "vuex";
 export default {
   props: {},
   components: {},
   data() {
-    return {};
+    return {
+      flag: true,
+      number:1,
+    };
   },
-  computed: {},
-  methods: {},
-  created() {},
+  computed: {
+    ...mapState({
+      list: state => state.classify.list
+    }),
+     ...mapState({
+      topList: state => state.classify.topList
+    })
+  },
+  methods: {
+    topTab(index,item){
+    this.number = index;
+    //  this.getClassifyList({ pageIndex: 3, cid: item.cid, sortType: 1 });
+    },
+    sort() {
+      this.flag = !this.flag;
+      if(this.flag){
+        this.list.sort((a, b) => {
+          //从小到大排序
+          return a.productVo.salesPrice - b.productVo.salesPrice;
+        });
+      }else{
+        this.list.sort((a, b) => {
+          //从小到大排序
+          return b.productVo.salesPrice - a.productVo.salesPrice;
+        });
+      }
+    
+    },
+    ...mapActions({
+      getClassifyList: "classify/getClassifyList",
+      getClassifyTopList: "classify/getClassifyTopList"
+    })
+  },
+  created() {
+    this.getClassifyList({ pageIndex: 3, cid: 1, sortType: 1 });
+    this.getClassifyTopList(),
+    console.log(this.topList)
+  },
   mounted() {}
 };
 </script>
@@ -213,17 +153,17 @@ export default {
   width: 100%;
   height: 100%;
 }
-.top dl dd{
+.top dl dd {
   width: 100%;
   text-align: center;
   font-size: 24rpx;
 }
-.section{
+.section {
   width: 100%;
   flex: 1;
   background: #eeeeee;
 }
-.section-top{
+.section-top {
   width: 100%;
   height: 80rpx;
   display: flex;
@@ -231,91 +171,104 @@ export default {
   margin-top: 10rpx;
   background: #ffffff;
 }
-.section-top div{
+.section-top div {
   width: 33%;
   height: 100%;
   line-height: 80rpx;
   text-align: center;
   position: relative;
 }
-.shang{
+.sorts .shang {
   position: absolute;
   left: 160rpx;
   font-size: 40rpx;
   top: -5rpx;
 }
-.xia{
+.sorts .xia {
   position: absolute;
   left: 160rpx;
   font-size: 40rpx;
   top: 15rpx;
 }
-.actives{
+.sorts .shangs {
+  position: absolute;
+  left: 160rpx;
+  font-size: 40rpx;
+  top: -3rpx;
   color: red;
 }
-.section{
+.sorts .xias {
+ position: absolute;
+  left: 160rpx;
+  font-size: 40rpx;
+  top: 15rpx;
+  color: red;
+}
+.section {
   width: 100%;
   flex: 1;
 }
-.section-main{
+.section-main {
   width: 100%;
   height: auto;
   margin-top: 30rpx;
   display: flex;
   flex-wrap: wrap;
 }
-.list{
-width: 350rpx;
-height: 460rpx;
-background: #ffffff;
-margin-left: 20rpx;
-margin-top: 20rpx;
+.list {
+  width: 350rpx;
+  height: 460rpx;
+  background: #ffffff;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
 }
-.list dt{
+.list dt {
   width: 294rpx;
   height: 276rpx;
   margin: 0 auto;
+  padding: 20rpx;
+  box-sizing: border-box;
 }
-.list dt img{
+.list dt img {
   width: 100%;
   height: 100%;
 }
-.list dd .title{
-  font-size:24rpx;
-  padding-left:20rpx;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  white-space:nowrap;
+.list dd .title {
+  font-size: 24rpx;
+  padding-left: 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-.main-box{
-  padding:0 10rpx;
-  box-sizing:border-box;
+.main-box {
+  padding: 0 10rpx;
+  box-sizing: border-box;
   display: inline-block;
-  border:2rpx solid #fc5d7b;
-  border-radius:6rpx;
-  font-size:20rpx;
-  color:#fc5d7b;
+  border: 2rpx solid #fc5d7b;
+  border-radius: 6rpx;
+  font-size: 20rpx;
+  color: #fc5d7b;
   margin: 20rpx 0 0 20rpx;
 }
-.main-price{
+.main-price {
   width: 100%;
   display: flex;
   margin-top: 20rpx;
   align-items: center;
 }
-.price{
-  font-size:36rpx;
-  color:#fc5d7b;
+.price {
+  font-size: 36rpx;
+  color: #fc5d7b;
   margin: 0 0 0 20rpx;
 }
-.price-vip{
+.price-vip {
   margin: 0 0 0 20rpx;
-  font-size:22rpx;
-  color:#a87831;
-  padding:5rpx;
-  display:inline-block
+  font-size: 22rpx;
+  color: #a87831;
+  padding: 5rpx;
+  display: inline-block;
 }
-.vip{
+.vip {
   width: 60rpx;
   height: 26rpx;
 }

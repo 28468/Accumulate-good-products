@@ -1,14 +1,22 @@
 {
-  "pages": [  
-    "pages/wode/addressDetail/main",
-    "pages/wode/conect/main",
-    "pages/wode/address/main",
-    "pages/wode/card/main",
+  "pages": [
+    "pages/index/main",
     "pages/wode/person/main",
+    "pages/wode/address/main",
+    "pages/wode/conect/main",
+    "pages/wode/addressDetail/main",
+    "pages/wode/card/main",
+  
+    "pages/index/topic/main",
     "pages/wode/main",
-    "pages/index/main"
-
-
+    "pages/shopCar/main",
+    "pages/index/searchDetail/main",
+    "pages/index/classify/main"
+    
+    
+    
+    
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -17,12 +25,25 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "list": [{
-      "pagePath": "pages/index/main",
-      "text": "首页"
-    }, {
-      "pagePath": "pages/wode/main",
-      "text": "我的"
-    }]
+    "list": [
+      {
+        "pagePath": "pages/index/main",
+        "text": "首页",
+        "iconPath": "static/tabs/home1.png",
+        "selectedIconPath": "static/tabs/home2.png"
+      },
+      {
+        "pagePath": "pages/shopCar/main",
+        "text": "购物车",
+        "iconpath": "static/tabs/car1.png",
+        "selectedIconPath": "static/tabs/car1.png"
+      },
+      {
+        "pagePath": "pages/wode/main",
+        "text": "我的",
+        "iconPath": "static/tabs/wode1.png",
+        "selectedIconPath": "static/tabs/wode2.png"
+      }
+    ]
   }
 }
