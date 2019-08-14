@@ -36,6 +36,7 @@
             </li>
              <li>
               <span><img src='/static/images/shezhi.png'/>实名认证</span>
+              <span><img src='/static/images/shezhi.png'/>实名认证</span>
                <em>></em>
             </li>
         </ol>
