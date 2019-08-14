@@ -36,7 +36,7 @@
             </li>
              <li>
               <span><img src='/static/images/shezhi.png'/>实名认证</span>
-              <span><img src='/static/images/shezhi.png'/>实名认证</span>
+      
                <em>></em>
             </li>
         </ol>
@@ -101,6 +101,12 @@ export default {
   background: #fff;
   margin-top: 20rpx;
 }
+
+.list li img{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
 .list li{
   width: 100%;
   height: 100rpx;
@@ -110,10 +116,5 @@ export default {
   padding: 20rpx;
   box-sizing: border-box;
   vertical-align: middle;
-}
-.list li img{
-  width: 40rpx;
-  height: 40rpx;
-  margin-right: 20rpx;
 }
 </style>

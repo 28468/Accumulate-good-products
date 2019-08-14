@@ -21,6 +21,7 @@
            <span>-</span>
            <p>1</p>
            <span>+</span>
+           <span>+</span>
          </div>
       </div>
     </div>
@@ -84,17 +85,18 @@ export default {
   position: relative;
   border-radius: 20rpx;
 }
+.list-check img{
+    width: 60rpx;
+    height: 60rpx;
+    margin-left: 20rpx;
+}
 .list-check{
    width: 80rpx;
    height: 100%;
   display: flex;
   align-items: center;
 }
-.list-check img{
-    width: 60rpx;
-    height: 60rpx;
-    margin-left: 20rpx;
-}
+
 .list-img{
   width: 200rpx;
   height: 100%;
