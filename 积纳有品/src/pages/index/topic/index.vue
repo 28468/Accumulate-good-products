@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper">
-    <div class="banner">
-      <img src="../../../../static/images/topic.png" alt="">
-      <p>南靖特产专区</p>
+    <div class="banner" v-for='(item,index) in list' :key='index'>
+      <!-- <div><img :src="item.specialImg" /></div> -->
+      <p>{{item.specialName}}</p>
     </div>
     <div class="tit">
       <img src="../../../../static/images/left.png" alt="">
@@ -54,6 +54,7 @@
   </div>
 </template>
 <script>
+import { mapState, mapActions } from "vuex";
 export default {
   props: {
 
@@ -67,13 +68,19 @@ export default {
     }
   },
   computed: {
-
+    ...mapState({
+      list: state => state.topic.list
+      
+    }),
+  
   },
   methods: {
-
+    ...mapActions({
+      getTopicList: "topic/getTopicList",
+    })
   },
   created() {
-
+    this.getTopicList({ siid: 127 })
   },
   mounted() {
 

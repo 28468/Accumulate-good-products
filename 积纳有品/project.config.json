@@ -1,19 +1,14 @@
 {
-<<<<<<< HEAD
 	"description": "项目配置文件",
 	"packOptions": {
 		"ignore": []
 	},
-=======
-	"description": "项目配置文件。",
->>>>>>> f3ea85cc00c82c9e329b2effbbd7918accc2a2be
 	"setting": {
 		"urlCheck": false,
 		"es6": false,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-<<<<<<< HEAD
 		"coverView": true,
 		"autoAudits": false,
 		"checkInvalidKey": true,
@@ -24,7 +19,6 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		}
-<<<<<<< HEAD
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.7.7",
@@ -36,23 +30,6 @@
 		"hidedInDevtools": []
 	},
 	"scripts": {},
-=======
-		"autoAudits": false,
-		"checkInvalidKey": true
-=======
-=======
-		"autoAudits": false,
-		"checkInvalidKey": true
->>>>>>> f3ea85cc00c82c9e329b2effbbd7918accc2a2be
->>>>>>> 392d9e30d41b9da01bb84486e5c04c0b3c91054b
-	},
-	"miniprogramRoot": "dist/wx/",
-	"compileType": "miniprogram",
-	"appid": "wx3375420e2c184d34",
-	"projectname": "Accumulate",
->>>>>>> f3ea85cc00c82c9e329b2effbbd7918accc2a2be
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -67,18 +44,10 @@
 			"list": []
 		},
 		"game": {
-<<<<<<< HEAD
 			"list": []
 		},
 		"miniprogram": {
 			"current": 5,
-=======
-			"currentL": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"current": 10,
->>>>>>> f3ea85cc00c82c9e329b2effbbd7918accc2a2be
 			"list": [
 				{
 					"id": -1,
@@ -124,41 +93,8 @@
 				},
 				{
 					"id": -1,
-<<<<<<< HEAD
 					"name": "实名认证",
 					"pathName": "pages/wode/prove/main",
-=======
-					"name": "我的优惠券",
-					"pathName": "pages/wode/card/main",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 7,
-					"name": "收货地址",
-					"pathName": "pages/wode/addressDetail/main",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "联系客服",
-					"pathName": "pages/wode/conect/main",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "添加收货地址",
-					"pathName": "pages/wode/address/main",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "我的订单",
-					"pathName": "pages/wode/person/main",
->>>>>>> f3ea85cc00c82c9e329b2effbbd7918accc2a2be
 					"query": "",
 					"scene": null
 				}

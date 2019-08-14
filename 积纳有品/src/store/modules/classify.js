@@ -30,7 +30,7 @@ const actions = {
   //获取分类页头部数据
   async getClassifyTopList({ commit }, payload) {
     const res = await classifyTopList();
-    console.log(res)
+    //console.log(res,'res.......')
     commit("updaClassifyTopList", res.result);
   }
 
