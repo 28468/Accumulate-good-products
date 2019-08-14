@@ -1,12 +1,14 @@
 {
-	"description": "项目配置文件。",
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
 	"setting": {
 		"urlCheck": false,
 		"es6": false,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-<<<<<<< HEAD
 		"coverView": true,
 		"autoAudits": false,
 		"checkInvalidKey": true,
@@ -17,17 +19,17 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		}
-=======
-		"autoAudits": false,
-		"checkInvalidKey": true
->>>>>>> f3ea85cc00c82c9e329b2effbbd7918accc2a2be
 	},
-	"miniprogramRoot": "dist/wx/",
 	"compileType": "miniprogram",
+	"libVersion": "2.7.7",
 	"appid": "wx3375420e2c184d34",
 	"projectname": "Accumulate",
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
+	"miniprogramRoot": "dist/wx/",
+	"cloudfunctionTemplateRoot": "",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"scripts": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -42,11 +44,10 @@
 			"list": []
 		},
 		"game": {
-			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": 10,
+			"current": 5,
 			"list": [
 				{
 					"id": -1,
@@ -92,36 +93,8 @@
 				},
 				{
 					"id": -1,
-					"name": "我的优惠券",
-					"pathName": "pages/wode/card/main",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 7,
-					"name": "收货地址",
-					"pathName": "pages/wode/addressDetail/main",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "联系客服",
-					"pathName": "pages/wode/conect/main",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "添加收货地址",
-					"pathName": "pages/wode/address/main",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "我的订单",
-					"pathName": "pages/wode/person/main",
+					"name": "实名认证",
+					"pathName": "pages/wode/prove/main",
 					"query": "",
 					"scene": null
 				}
