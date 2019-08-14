@@ -36,7 +36,8 @@
             </li>
              <li>
               <span><img src='/static/images/shezhi.png'/>实名认证</span>
-              <em>></em>
+      
+               <em>></em>
             </li>
         </ol>
      </div>
@@ -69,4 +70,65 @@ export default {
 }
 </script>
 <style scoped lang="">
+.mine{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.topimg img{
+  width: 100%;
+  height: 200rpx;
+}
+.middle {
+  flex:1;
+    padding: 20rpx;
+  box-sizing: border-box;
+  background: #f3f7f7;
+}
+.middle .order {
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 10px;
+  margin-top: -50rpx;
+}
+.order h1{
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.orderList{
+  width: 100%;
+  display: flex;
+}
+.orderList li {
+  flex:1;
+  text-align: center;
+}
+.orderList li img{
+  width: 70rpx;
+  height:70rpx;
+}
+.list{
+  width: 100%;
+  background: #fff;
+  margin-top: 20rpx;
+}
+
+.list li img{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+.list li{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
 </style>
