@@ -46,11 +46,9 @@
 <script>
 export default {
   components:{
-
   },
   data(){
     return {
-
     }
   }
  
@@ -73,7 +71,6 @@ export default {
   box-sizing: border-box;
   background: #f3f7f7;
 }
-
 .middle .order {
   width: 100%;
   padding: 20rpx;
@@ -89,7 +86,6 @@ export default {
 .orderList{
   width: 100%;
   display: flex;
-
 }
 .orderList li {
   flex:1;
@@ -113,7 +109,6 @@ export default {
   padding: 20rpx;
   box-sizing: border-box;
   vertical-align: middle;
-
 }
 .list li img{
   width: 40rpx;
