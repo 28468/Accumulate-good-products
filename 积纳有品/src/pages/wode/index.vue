@@ -36,6 +36,7 @@
             </li>
              <li>
               <span><img src='/static/images/shezhi.png'/>实名认证</span>
+      
                <em>></em>
             </li>
         </ol>
@@ -45,15 +46,27 @@
 </template>
 <script>
 export default {
-  components:{
+  props:{
 
+  },
+  components:{
   },
   data(){
     return {
-
     }
+  },
+  computed:{
+
+  },
+  methods:{
+
+  },
+  created(){
+
+  },
+  mounted(){
+
   }
- 
 }
 </script>
 <style scoped lang="">
@@ -73,7 +86,6 @@ export default {
   box-sizing: border-box;
   background: #f3f7f7;
 }
-
 .middle .order {
   width: 100%;
   padding: 20rpx;
@@ -89,7 +101,6 @@ export default {
 .orderList{
   width: 100%;
   display: flex;
-
 }
 .orderList li {
   flex:1;
@@ -104,6 +115,12 @@ export default {
   background: #fff;
   margin-top: 20rpx;
 }
+
+.list li img{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
 .list li{
   width: 100%;
   height: 100rpx;
@@ -113,11 +130,5 @@ export default {
   padding: 20rpx;
   box-sizing: border-box;
   vertical-align: middle;
-
-}
-.list li img{
-  width: 40rpx;
-  height: 40rpx;
-  margin-right: 20rpx;
 }
 </style>
