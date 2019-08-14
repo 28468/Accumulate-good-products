@@ -14,10 +14,10 @@
     </div>
     <div class="section">
       <div class="section-top">
-        <div>
+        <div @click="zonghe">
           <p>综合</p>
         </div>
-        <div>
+        <div @click="news">
           <p>最新</p>
         </div>
         <div @click="sort" class="sorts">
@@ -29,19 +29,19 @@
       <div class="section-main">
         <dl class="list" v-for="(item,index) in list" :key="index">
           <dt>
-            <img class="list-img" :src="item.productVo.mainImgUrl" alt />
+            <img class="list-img" :src="item.mainImgUrl" alt />
           </dt>
           <dd>
-            <p class="title">{{item.productVo.title}}</p>
+            <p class="title">{{item.title}}</p>
             <span class="main-box">包邮</span>
             <div class="main-price">
               <p class="price">
                 ￥
-                <span>{{item.productVo.salesPrice}}</span>
+                <span>{{item.salesPrice}}</span>
               </p>
               <p class="price-vip">
                 ￥
-                <span>{{item.productVo.vipPrice}}</span>
+                <span>{{item.vipPrice}}</span>
               </p>
               <img class="vip" src="/static/images/vip.svg" alt />
             </div>
@@ -59,6 +59,8 @@ export default {
   data() {
     return {
       flag: true,
+      newCid:'',
+      sortid:3,
     };
   },
   computed: {
@@ -78,21 +80,22 @@ export default {
     topTab(index,item){
       this.getInd({index,item})
       this.getClassifyList({ pageIndex: 1, cid: item.cid, sortType: 1 });
+      this.newCid = item.cid
+    },
+    zonghe(){
+   this.getClassifyList({ pageIndex: 1, cid: this.newCid, sortType:1  });
+    },
+    news(){
+      this.getClassifyList({ pageIndex: 1, cid: this.newCid, sortType: 2 });
     },
     sort() {
       this.flag = !this.flag;
       if(this.flag){
-        this.list.sort((a, b) => {
-          //从小到大排序
-          return a.productVo.salesPrice - b.productVo.salesPrice;
-        });
+        this.sortid=3
       }else{
-        this.list.sort((a, b) => {
-          //从小到大排序
-          return b.productVo.salesPrice - a.productVo.salesPrice;
-        });
+      this.sortid = 4
       }
-    
+      this.getClassifyList({ pageIndex: 1, cid: this.newCid, sortType: this.sortid });
     },
     ...mapActions({
       getClassifyList: "classify/getClassifyList",
@@ -100,10 +103,11 @@ export default {
     })
   },
   onShow(){
-    // this.getClassifyList({ pageIndex: 1, cid: classItem.cid, sortType: 1 });
+    this.getClassifyList({ pageIndex: 1, cid: this.classItem.cid, sortType: 1 });
+     this.newCid = this.classItem.cid
   },
   created() {
-    this.getClassifyList({ pageIndex: 1, cid: 1, sortType: 1 });
+    this.getClassifyList({ pageIndex: 1, cid: 1, sortType: this.sortid });
     this.getClassifyTopList()
   },
   mounted() {}
@@ -264,7 +268,7 @@ export default {
 .price {
   font-size: 36rpx;
   color: #fc5d7b;
-  margin: 0 0 0 20rpx;
+  margin: 0 0 0 10rpx;
 }
 .price-vip {
   margin: 0 0 0 20rpx;

@@ -7,6 +7,5 @@ export let classifyList = params => {
   }
   
 export function classifyTopList(){
-  //console.log(params)
   return fly.post("/api/open/product/category/query/1.0.0",)
 }

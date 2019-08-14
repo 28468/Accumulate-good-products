@@ -9,11 +9,9 @@ export default {
 
   },
   components:{
-
   },
   data(){
     return {
-
     }
   },
   computed:{
@@ -31,5 +29,4 @@ export default {
 }
 </script>
 <style scoped lang="">
-
 </style>
