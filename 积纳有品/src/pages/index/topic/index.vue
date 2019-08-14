@@ -51,20 +51,21 @@ export default {
   },
   data(){
     return {
+
     }
   },
   computed:{
 
   },
   methods:{
-    
+
   },
   created(){
 
   },
   mounted(){
 
-  },
+  }
 }
 </script>
 <style scoped lang="scss">
@@ -102,6 +103,7 @@ export default {
       height:30rpx;
     }
   }
+
   .topicList{
     width:100%;
     display:flex;

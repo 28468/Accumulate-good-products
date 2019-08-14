@@ -125,8 +125,8 @@ import { mapState, mapActions } from "vuex";
 export default {
   props: {},
   components: {
-     homeDl,
-     homeList
+    homeDl,
+    homeList
   },
   data() {
     return {};
@@ -224,12 +224,12 @@ export default {
         box-sizing: border-box;
        .u-wrp-bnr{
          width:100%;
-         height:39.5vw;
-         box-sizing:border-box;
-         display: block;
+height:39.5vw;
+box-sizing:border-box;
+display: block;
      .u-item{
        position:absolute;
-       width:100%;
+width:100%;
 height:100%;
 transform:translate(0%, 0px) translateZ(0px);
  display:block;

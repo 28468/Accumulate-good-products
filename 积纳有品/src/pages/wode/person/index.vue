@@ -6,19 +6,23 @@
      <li>待发货</li>
      <li>待收货</li>
    </div>
-  </div> 
+  </div>
+   
 </template>
 <script>
 export default {
   components:{
+
   },
   data(){
     return {
+
     }
-  } 
+  }
+ 
 }
 </script>
-<style scoped lang="scss">
+<style scoped lang="">
 .order{
   width:100%;
   height:100%;
@@ -35,6 +39,7 @@ export default {
 }
 .tab li{
   flex:1;
-  text-align:center; 
+  text-align:center;
+  
 }
 </style>

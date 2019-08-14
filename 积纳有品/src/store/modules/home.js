@@ -1,32 +1,32 @@
-import { getHomeData, getNav, getListData, getDetail, getDetailNum, getDetailImg, getDetailDq } from '../../service/index';
+import { getHomeData,classifyTopList,getNav,getListData,getDetail,getDetailNum,getDetailImg,getDetailDq } from '../../service/index';
 // 模块所有的状态
 const state = {
-    swiper: {},
-    nav: {},
+    swiper : {},
+    nav : {},
     // homeData:[]
-    tu: '',
-    tu1: '',
-    dl: [],
-    tu2: '',
-    dl1: [],
-    tu3: '',
-    dl2: [],
-    tu4: '',
-    dl3: [],
-    tu5: '',
-    dl4: [],
+    tu:'',
+    tu1:'',
+    dl:[],
+    tu2:'',
+    dl1:[],
+    tu3:'',
+    dl2:[],
+    tu4:'',
+    dl3:[],
+    tu5:'',
+    dl4:[],
     // parentId:"parentId=0"
-    listData: [],
-    pid: 200,
-    detail: {},
-    num: [],//数量
-    img: [],//图片
-    dq: ''//地区
+    listData:[],
+    pid:200,
+    detail:{},
+    num:[],//数量
+    img:[],//图片
+    dq:''//地区
 }
 
 // 模块内的同步改变
 const mutations = {
-    gethData(state, payload) {
+    gethData(state,payload){
         // state.homeData = payload
         state.swiper = payload[0].items
         state.nav = payload[1].items
@@ -42,58 +42,64 @@ const mutations = {
         state.tu5 = payload[12].pictUrl
         state.dl4 = payload[13].items
     },
-    getlData(state, payload) {
+    getlData(state,payload){
         state.listData = payload
     },
-    getdData(state, payload) {
+    getdData(state,payload){
         // console.log("aaaaaa",payload)
         state.detail = payload
     },
-    getNum(state, payload) {
+    getNum(state,payload){
         // console.log('num...',payload)
         state.num = payload
     },
-    getImg(state, payload) {
+    getImg(state,payload){
         state.img = payload
     },
-    getDq(state, payload) {
+    getDq(state,payload){
         state.dq = payload
     }
 }
 
 // 模块内的异步改变
 const actions = {
-    async getData({ commit }, payload) {
+    async getData({commit},payload) {
         let data = await getHomeData()
-        commit('gethData', data.result)
+        console.log("data...",data)
+        commit('gethData',data.result)
     },
-    async getNavData({ commit, state }, payload) {
-        let data = await getNav({ parentId: state.parentId })
-        // console.log("ssssssss",data)
-        // commit('gethData',data.result)
-    },
-    async getLData({ commit }, payload) {
+    // async getNavData({commit,state},payload) {
+    //     let data = await getNav({parentId:state.parentId})
+    //     // console.log("ssssssss",data)
+    //     // commit('gethData',data.result)
+    // },
+    async getClassifyTopList({ commit }, payload) {
+        const res = await classifyTopList();
+        console.log(res)
+        commit("updaClassifyTopList", res.result);
+      },
+    async getLData({commit},payload) {
         let data = await getListData()
-        commit('getlData', data.result)
+        commit('getlData',data.result)
     },
-    async getDetailData({ commit, state }, payload) {
+    async getDetailData({commit,state},payload) {
         let data = await getDetail('pid=200')
-        commit('getdData', data.result)
+        commit('getdData',data.result)
     },
 
-    async getDetailNum({ commit, state }, payload) {
-        console.log("11111", payload)
+    async getDetailNum({commit,state},payload) {
+        console.log("11111",payload)
         let data = await getDetailNum('pid=200')
-        commit('getNum', data.result)
+        commit('getNum',data.result)
     },
-    async getDetailImg({ commit, state }, payload) {
+    async getDetailImg({commit,state},payload) {
         let data = await getDetailImg('pid=200')
-        commit('getImg', data.result)
+        commit('getImg',data.result)
     },
-    async getDetailDq({ commit, state }, payload) {
+    async getDetailDq({commit,state},payload) {
         let data = await getDetailDq('sstid: 80')
         // console.log("1111111",data)
-        commit('getDq', data.result)
+        commit('getDq',data.result)
     },
 }
 

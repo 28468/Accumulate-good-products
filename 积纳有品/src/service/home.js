@@ -5,14 +5,14 @@ export function getHomeData() {
   return fly.post("/api/open/page/home/list/1.0.0");
 }
 // 获取首页nav
-export function getNav(payload) {
-  // let item = Object.values(payload)
-  // let item1 = JSON.parse(item)
+// export function getNav(payload) {
+//   // let item = Object.values(payload)
+//   // let item1 = JSON.parse(item)
 
-  // console.log(item1,"aaaaaaaaa")
+//   // console.log(item1,"aaaaaaaaa")
 
-  return fly.post("/api/open/product/category/sub/1",payload);
-}
+//   return fly.post("/api/open/product/category/sub/1",payload);
+// }
 // 获取首页list数据
 export function getListData(payload) {
   console.log("ddddddd",payload)

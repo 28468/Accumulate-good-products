@@ -24,6 +24,7 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		}
+<<<<<<< HEAD
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.7.7",
@@ -38,6 +39,12 @@
 =======
 		"autoAudits": false,
 		"checkInvalidKey": true
+=======
+=======
+		"autoAudits": false,
+		"checkInvalidKey": true
+>>>>>>> f3ea85cc00c82c9e329b2effbbd7918accc2a2be
+>>>>>>> 392d9e30d41b9da01bb84486e5c04c0b3c91054b
 	},
 	"miniprogramRoot": "dist/wx/",
 	"compileType": "miniprogram",
