@@ -1,67 +1,108 @@
 <template>
   <div class="searchDetail">
-    <swiper class="u-wrp-bnr" autoplay="true">
-      <swiper-item class="u-item">
-        <image src='https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=416883042,2446087554&fm=26&gp=0.jpg' class='u-img-slide' mode='aspectFill'></image>
-      </swiper-item>
-      <swiper-item class="u-item">
-        <image src='https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2328966754,873353896&fm=26&gp=0.jpg' class='u-img-slide' mode='aspectFill'></image>
-      </swiper-item>
-      <swiper-item class="u-item">
-        <image src='https://f11.baidu.com/it/u=1328175307,1706219131&fm=72' class='u-img-slide' mode='aspectFill'></image>
-      </swiper-item>
-    </swiper>
+    <div class="u-wrp-bnr" autoplay="true">
+      <img :src="detail.mainImgUrl"/>
+    </div>
     <div class="detMoney">
-      <span>￥85</span>
-      <span>83.02</span>
+      <span>￥{{detail.salesPrice}}</span>
+      <span>{{detail.vipPrice}}</span>
+      <img src="../../../../static/images/vip.svg"/>
       <p>
         分享赚
-        <span>1.98</span>
+        <span>{{detail.earnMoney}}</span>
       </p>
     </div>
     <div class="detTit">
-      <P>Carters's女童长袖印花+短袖T恤+裤子套装6个月</P>
+      <P>{{detail.title}}</P>
       <b>快递包邮</b>
     </div>
     <div class="detChoose">
-      <div class="chooseLeft">
+      <div class="chooseLeft" @click="click(this.flag = !this.flag)">
         <label class="_span">选择</label>
         <div class="_div">
-          <label>规格</label>
+          <label>数量</label>
           <label>></label>
         </div>
       </div>
       <div class="chooseRight">
         <label class="_span">提示</label>
         <div class='div'>
-          <label class="_spans">西藏</label>
+          <label class="_spans">{{dq}}</label>
         </div>
       </div>
     </div>
     <div class="imgs">
-      
+      <img
+      v-for="(item,index) in img"
+      :key="index"
+      :src="item.imgUrl"
+      :style="{'height':item.imgHeight}"
+      />
     </div>
     <div class="mask">
-
+      <div class="div">
+        <div class="_p">
+          <label class="_span">{{num.aname}}</label>
+          <label class="_span">x</label>
+        </div>
+        <div class="_dl">
+          <div class="dt">
+            <img :src="detail.mainImgUrl"/>
+          </div>
+          <div class="dd">
+            <div class="_p">￥{{detail.salesPrice}}</div>
+            <div class="_ps">库存：{{detail.totalStock}}</div>
+          </div>
+        </div>
+        <div class="_div">
+          <div class="_p">数量</div>
+          <div class="jian">
+            <div class="divs">{{num.attributeValueRelationVoList[0].vname}}</div>
+            <div class="divss">{{num.attributeValueRelationVoList[1].vname}}</div>
+          </div>
+        </div>
+        <div class="_divs">
+          <label class="_span">数量</label>
+          <div class="count">
+            <label class="del">-</label>
+            <label class="num">1</label>
+            <label class="add">+</label>
+          </div>
+        </div>
+        <button>确定</button>
+      </div>
     </div>
     <div class="btns">
       <p>
         分享赚
-        <span>1.98</span>
+        <span>{{detail.earnMoney}}</span>
       </p>
       <p>立即购买</p>
     </div>
   </div>
 </template>
 <script>
+import { mapState, mapActions } from "vuex";
 export default {
   props: {},
   components: {},
   data() {
-    return {};
+    return {
+      flag:false
+    };
   },
-  computed: {},
-  methods: {},
+  computed: {
+    ...mapState({
+      img:state => state.home.img,
+      dq:state => state.home.dq,
+      detail:state => state.home.detail,
+      num:state => state.home.num
+    })
+  },
+  methods: {
+    
+  },
+  
   created() {},
   mounted() {}
 };
@@ -76,6 +117,10 @@ export default {
   width: 100%;
   height: 750rpx;
   display: block;
+  img{
+    width: 100%;
+    height: 100%;
+  }
 }
 .u-item {
   display: block;
@@ -92,6 +137,14 @@ export default {
   width: 100%;
   height: 100rpx;
   display: flex;
+  img{
+    width: 40rpx;
+    height: 20rpx;
+    margin-top: 45rpx;
+    margin-left: 10rpx;
+    display: inline-block;
+    overflow: hidden;
+  }
 }
 .detMoney > span:nth-child(1) {
   height: 100%;
@@ -180,10 +233,148 @@ export default {
     }
   }
 }
+.imgs{
+  width: 100%;
+  margin-bottom: 120rpx;
+  img{
+    width: 100%;
+  }
+}
+.mask{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  // display:none;
+  .div{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    ._p{
+      display: flex;
+      justify-content: space-between;
+      box-sizing: border-box;
+    }
+    ._dl{
+      display: flex;
+      padding: 0 2%;
+      box-sizing: border-box;
+      .dt{
+        margin-right: 5px;
+        img{
+          width: 160rpx;
+          height: 160rpx;
+          display: inline-block;
+          overflow: hidden;
+        }
+      }
+      .dd{
+        ._p{
+          font-size: 30rpx;
+          color: #323a45;
+          line-height: 2;
+        }
+        ._p{
+          font-size: 30rpx;
+          color: #999da2;
+          line-height: 2;
+        }
+      }
+    }
+    ._div{
+      padding: 0 2%;
+      box-sizing: border-box;
+      margin-top: 10rpx;
+      ._p{
+        color: #999da2;
+        font-size: 30rpx;
+        line-height: 2;
+      }
+      .jian{
+        display: flex;
+        flex-wrap: wrap;
+        .divs{
+          background: #33d6c5;
+          color: #fff;
+          border: 2rpx solid #33d6c5;
+          padding: 6rpx 16rpx;
+          box-sizing: border-box;
+          margin: 10rpx 20rpx;
+          font-size: 24rpx;
+        }
+        .divss{
+          border: 2rpx solid #ccc;
+          padding: 6rpx 16rpx;
+          box-sizing: border-box;
+          margin: 10rpx 20rpx;
+          font-size: 24rpx;
+          border-radius: 10rpx;
+        }
+      }
+    }
+    ._divs{
+      padding: 0 2%;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20rpx;
+      ._span{
+        font-size: 30rpx;
+        color: #999da2;
+        line-height: 2;
+      }
+      .count{
+        display: flex;
+        .del{
+          display: block;
+          line-height: 2;
+          font-size: 28rpx;
+          text-align: center;
+          padding: 0 20rpx;
+          box-sizing: border-box;
+          border: 2rpx solid #ccc;
+        }
+        .num{
+          min-width: 80rpx;
+          display: block;
+          line-height: 2;
+          font-size: 28rpx;
+          text-align: center;
+          padding: 0 20rpx;
+          box-sizing: border-box;
+          border: 2rpx solid #ccc;
+        }
+        .add{
+          display: block;
+          line-height: 2;
+          font-size: 28rpx;
+          text-align: center;
+          padding: 0 20rpx;
+          box-sizing: border-box;
+          border: 2rpx solid #ccc;
+        }
+      }
+    }
+    button{
+      width: 100%;
+      height: 110rpx;
+      line-height: 110rpx;
+      text-align: center;
+      color: #fff;
+      background: linear-gradient(217deg,#f86367,#fb2579);
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
 .btns {
   position: fixed;
   bottom: 0;
-  z-index: 999;
+  z-index: 888;
   width: 100%;
   height: 100rpx;
   display: flex;

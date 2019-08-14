@@ -27,15 +27,13 @@ export default {
     ...mapActions({
       getDetailData: "home/getDetailData",
       getDetailNum: "home/getDetailNum",
-      getDetailImg: "home/getDetailImg",
-      getDetailDq: "home/getDetailDq"
+      getDetailImg: "home/getDetailImg"
     }),
     detail(item){
-      let id=item.jumpUrl.split("product")[1].split("&")[1].split("=")[1]
-      this.getDetailData(id)
-      this.getDetailNum()
-      this.getDetailImg()
-      this.getDetailDq()
+      let pid=item.jumpUrl.split("product")[1].split("&")[1].split("=")[1]
+      this.getDetailData(pid)
+      this.getDetailNum(pid)
+      this.getDetailImg(pid)
       wx.navigateTo({ url: "searchDetail/main" });
     }
   },

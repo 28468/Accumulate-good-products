@@ -19,6 +19,10 @@
               <img src='/static/images/daishouhuo.png'/>
               <em>待收货</em>
             </li>
+            <li>
+              <img src='../../../static/images/Group 4(3).svg'/>
+              <em>退款退货</em>
+            </li>
           </ul>
         </div>
         <ol class="list">
@@ -27,16 +31,19 @@
               <em>></em>
             </li>
             <li>
-              <span><img src='/static/images/share.png'/>收货地址</span>
+              <span><img src='/static/images/mine.png'/>关于我们</span>
                <em>></em>
             </li>
             <li>
-              <span><img src='/static/images/kefu.png'/>联系客服</span>
+              <span><img src='/static/images/share.png'/>我的分享</span>
                <em>></em>
             </li>
              <li>
-              <span><img src='/static/images/shezhi.png'/>实名认证</span>
-      
+              <span><img src='/static/images/kefu.png'/>联系客服</span>
+               <em>></em>
+            </li>
+            <li>
+              <span><img src='/static/images/shezhi.png'/>设置</span>
                <em>></em>
             </li>
         </ol>
@@ -69,7 +76,7 @@ export default {
   }
 }
 </script>
-<style scoped lang="">
+<style scoped lang="scss">
 .mine{
   width: 100%;
   height: 100%;
@@ -119,7 +126,7 @@ export default {
 .list li img{
   width: 40rpx;
   height: 40rpx;
-  margin-right: 20rpx;
+  margin: 30rpx 20rpx 0 0;
 }
 .list li{
   width: 100%;
@@ -129,6 +136,10 @@ export default {
   justify-content: space-between;
   padding: 20rpx;
   box-sizing: border-box;
-  vertical-align: middle;
+  /* vertical-align: middle; */
+  border-bottom: 1px solid #eee;
+  span{
+    line-height:  100rpx;
+  }
 }
 </style>

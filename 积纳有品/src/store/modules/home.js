@@ -22,7 +22,7 @@ const state = {
     ind:0,
     listData:[],
     pid:200,
-    detail:{},
+    detail:{},//详情数据
     num:[],//数量
     img:[],//图片
     dq:''//地区
@@ -57,12 +57,13 @@ const mutations = {
     getlData(state,payload){
         state.listData = payload
     },
+    //详情所有数据
     getdData(state,payload){
-        // console.log("aaaaaa",payload)
+        console.log("aaaaaa",payload)
         state.detail = payload
     },
     getNum(state,payload){
-        // console.log('num...',payload)
+        console.log('num...',payload)
         state.num = payload
     },
     getImg(state,payload){
@@ -77,7 +78,6 @@ const mutations = {
 const actions = {
     async getData({commit},payload) {
         let data = await getHomeData()
-        // console.log("data...",data)
         commit('gethData',data.result)
     },
     //nav
@@ -94,23 +94,24 @@ const actions = {
         let data = await getListData()
         commit('getlData',data.result)
     },
-    async getDetailData({commit,state},payload) {
-        let data = await getDetail('pid=200')
+
+    //详情所有数据
+    async getDetailData({commit,dispatch,state},payload) {
+        let data = await getDetail({pid:payload})
         commit('getdData',data.result)
+        dispatch('getDetailDq',data.result.sstid)
     },
 
     async getDetailNum({commit,state},payload) {
-        // console.log("11111",payload)
-        let data = await getDetailNum('pid=200')
+        let data = await getDetailNum({pid:payload})
         commit('getNum',data.result)
     },
     async getDetailImg({commit,state},payload) {
-        let data = await getDetailImg('pid=200')
+        let data = await getDetailImg({pid:payload})
         commit('getImg',data.result)
     },
     async getDetailDq({commit,state},payload) {
-        let data = await getDetailDq('sstid: 80')
-        // console.log("1111111",data)
+        let data = await getDetailDq({sstid:payload})
         commit('getDq',data.result)
     },
 }

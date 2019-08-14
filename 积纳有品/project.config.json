@@ -49,7 +49,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 5,
+			"current": 11,
 			"list": [
 				{
 					"id": -1,
@@ -98,6 +98,40 @@
 					"name": "实名认证",
 					"pathName": "pages/wode/prove/main",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的订单",
+					"pathName": "pages/wode/person/main",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "收货地址",
+					"pathName": "pages/wode/address/main",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "联系客服",
+					"pathName": "pages/wode/conect/main",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "添加具体地址",
+					"pathName": "pages/wode/addressDetail/main",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的优惠券",
+					"pathName": "pages/wode/card/main",
 					"scene": null
 				}
 			]
