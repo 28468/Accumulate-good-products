@@ -2,7 +2,6 @@
   <div class="wrap">
     <div class="header">
       <p v-for='(item,index) in topList' :key='index' :class="[index===number?'active':'null']" @click="topTab(index,item)">{{item.cname}}</p>
-      <!-- <p class="active">尿不湿</p>  -->
     </div>
     <div class="top">
       <dl v-for="(item,index) in topList[number].childs" :key="index">
@@ -27,7 +26,7 @@
         </div>
       </div>
       <div class="section-main">
-        <dl class="list" v-for="(item,index) in list" :key="index">
+        <dl class="list" v-for="(item,index) in list" :key="index" @click='godetails'>
           <dt>
             <img class="list-img" :src="item.mainImgUrl" alt />
           </dt>
@@ -77,6 +76,9 @@ export default {
     ...mapActions({
       getInd:'home/getInd'
     }),
+    godetails(){
+      
+    },
     topTab(index,item){
       this.getInd({index,item})
       this.getClassifyList({ pageIndex: 1, cid: item.cid, sortType: 1 });
