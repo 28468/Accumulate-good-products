@@ -15,7 +15,11 @@ const state = {
     dl3:[],
     tu5:'',
     dl4:[],
-    // parentId:"parentId=0"
+    parentId: 0,
+    tui:[{cname:"今日推荐"}],//tab
+    tab:[],
+    classItem:{},
+    ind:0,
     listData:[],
     pid:200,
     detail:{},
@@ -42,6 +46,14 @@ const mutations = {
         state.tu5 = payload[12].pictUrl
         state.dl4 = payload[13].items
     },
+    getnData(state,payload){
+        let arr = state.tui.concat(payload)
+        state.tab = arr
+    },
+    upInd(state,payload){
+        state.ind = payload.index
+        state.classItem = payload.item
+    },
     getlData(state,payload){
         state.listData = payload
     },
@@ -65,14 +77,19 @@ const mutations = {
 const actions = {
     async getData({commit},payload) {
         let data = await getHomeData()
-        console.log("data...",data)
+        // console.log("data...",data)
         commit('gethData',data.result)
     },
-    async getNavData({commit,state},payload) {
-        let data = await getNav({parentId:state.parentId})
-        // console.log("ssssssss",data)
-        // commit('gethData',data.result)
+    //nav
+    async getNavData({commit},payload) {
+        let data = await getNav({ parentId: state.parentId })
+        commit('getnData',data.result)
     },
+    //获取下标
+    getInd({commit},payload){
+        commit('upInd',payload)
+    },
+
     async getLData({commit},payload) {
         let data = await getListData()
         commit('getlData',data.result)
@@ -83,7 +100,7 @@ const actions = {
     },
 
     async getDetailNum({commit,state},payload) {
-        console.log("11111",payload)
+        // console.log("11111",payload)
         let data = await getDetailNum('pid=200')
         commit('getNum',data.result)
     },

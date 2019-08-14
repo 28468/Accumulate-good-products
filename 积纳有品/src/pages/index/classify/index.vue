@@ -1,7 +1,6 @@
 <template>
   <div class="wrap">
     <div class="header">
-      <p>今日推荐</p>
       <p v-for='(item,index) in topList' :key='index' :class="[index===number?'active':'null']" @click="topTab(index,item)">{{item.cname}}</p>
       <!-- <p class="active">尿不湿</p>  -->
     </div>
@@ -60,21 +59,25 @@ export default {
   data() {
     return {
       flag: true,
-      number:1,
     };
   },
   computed: {
     ...mapState({
-      list: state => state.classify.list
+      list: state => state.classify.list,
+      number:state => state.home.ind,
+      classItem:state => state.home.classItem
     }),
      ...mapState({
       topList: state => state.classify.topList
     })
   },
   methods: {
+    ...mapActions({
+      getInd:'home/getInd'
+    }),
     topTab(index,item){
-    this.number = index;
-    //  this.getClassifyList({ pageIndex: 3, cid: item.cid, sortType: 1 });
+      this.getInd({index,item})
+      this.getClassifyList({ pageIndex: 1, cid: item.cid, sortType: 1 });
     },
     sort() {
       this.flag = !this.flag;
@@ -96,10 +99,12 @@ export default {
       getClassifyTopList: "classify/getClassifyTopList"
     })
   },
+  onShow(){
+    // this.getClassifyList({ pageIndex: 1, cid: classItem.cid, sortType: 1 });
+  },
   created() {
-    this.getClassifyList({ pageIndex: 3, cid: 1, sortType: 1 });
-    this.getClassifyTopList(),
-    console.log(this.topList)
+    this.getClassifyList({ pageIndex: 1, cid: 1, sortType: 1 });
+    this.getClassifyTopList()
   },
   mounted() {}
 };

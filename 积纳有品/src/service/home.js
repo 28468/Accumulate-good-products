@@ -6,16 +6,11 @@ export function getHomeData() {
 }
 // 获取首页nav
 export function getNav(payload) {
-  // let item = Object.values(payload)
-  // let item1 = JSON.parse(item)
-
-  // console.log(item1,"aaaaaaaaa")
-
   return fly.post("/api/open/product/category/sub/1",payload);
 }
 // 获取首页list数据
 export function getListData(payload) {
-  console.log("ddddddd",payload)
+  // console.log("ddddddd",payload)
   return fly.post("/api/open/page/home/products/1.0.0",payload);
 }
 // 获取首页商品详情
