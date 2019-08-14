@@ -49,7 +49,11 @@
 			"list": []
 		},
 		"miniprogram": {
+<<<<<<< HEAD
 			"current": 11,
+=======
+			"current": 7,
+>>>>>>> 87c000b1fd55bd3355791031664d59b9e531051b
 			"list": [
 				{
 					"id": -1,
@@ -101,11 +105,16 @@
 					"scene": null
 				},
 				{
+<<<<<<< HEAD
 					"id": -1,
+=======
+					"id": 7,
+>>>>>>> 87c000b1fd55bd3355791031664d59b9e531051b
 					"name": "我的订单",
 					"pathName": "pages/wode/person/main",
 					"query": "",
 					"scene": null
+<<<<<<< HEAD
 				},
 				{
 					"id": -1,
@@ -133,6 +142,8 @@
 					"name": "我的优惠券",
 					"pathName": "pages/wode/card/main",
 					"scene": null
+=======
+>>>>>>> 87c000b1fd55bd3355791031664d59b9e531051b
 				}
 			]
 		}

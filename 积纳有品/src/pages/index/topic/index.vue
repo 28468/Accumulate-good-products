@@ -5,7 +5,7 @@
       <p>{{item.specialName}}</p>
     </div>
     <div class="tit">
-      <img src="../../../../static/images/left.png" alt="">
+      <img src="../../../../static/images/right.png" alt="">
       <span>南靖特产专区</span>
       <img src="../../../../static/images/right.png" alt="">
     </div>
@@ -70,9 +70,9 @@ export default {
   computed: {
     ...mapState({
       list: state => state.topic.list
-      
+
     }),
-  
+
   },
   methods: {
     ...mapActions({
