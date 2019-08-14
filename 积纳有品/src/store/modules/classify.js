@@ -10,10 +10,7 @@ const state = {
 // 模块内的同步改变
 const mutations = {
   updaClassifyList(state, payload) {
-    console.log("payload...",payload)
-    payload.sort((a, b) => {//从小到大排序
-      return a.productVo.salesPrice - b.productVo.salesPrice
-    })
+   
     state.list = payload;
   },
   updaClassifyTopList(state, payload) {

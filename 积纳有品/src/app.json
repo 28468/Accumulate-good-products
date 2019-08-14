@@ -1,5 +1,8 @@
 {
   "pages": [
+    "pages/wode/setting/main",
+    "pages/wode/personMessage/main",
+    "pages/wode/phone/main",
     "pages/wode/person/main",
     "pages/wode/address/main",
     "pages/wode/conect/main",
