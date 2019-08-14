@@ -65,9 +65,7 @@ export default {
   },
   computed: {
     ...mapState({
-      list: state => state.classify.list
-    }),
-     ...mapState({
+      list: state => state.classify.list,
       topList: state => state.classify.topList
     })
   },

@@ -77,6 +77,7 @@ export default {
 
  }
  .default{
+  
    width: 100%;
    height: 100rpx;
    display: flex;

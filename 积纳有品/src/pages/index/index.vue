@@ -15,62 +15,29 @@
       <div class="conter">
         <div class="swiper">
              <swiper class="u-wrp-bnr" autoplay="true" indicator-dots='true'>
-                <swiper-item class="u-item">
-                  <image src='https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=416883042,2446087554&fm=26&gp=0.jpg' class='u-img-slide' mode='aspectFill'></image>
-                </swiper-item>
-                <swiper-item class="u-item">
-                  <image src='https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2328966754,873353896&fm=26&gp=0.jpg' class='u-img-slide' mode='aspectFill'></image>
-                </swiper-item>
-                <swiper-item class="u-item">
-                  <image src='https://f11.baidu.com/it/u=1328175307,1706219131&fm=72' class='u-img-slide' mode='aspectFill'></image>
+                <swiper-item class="u-item" 
+                v-for="(item,index) in swiper"
+                :key="index"
+                >
+                  <image :src='item.imgUrl' class='u-img-slide' mode='aspectFill'></image>
                 </swiper-item>
             </swiper>
         </div>
         <div class="conter-nav">
-          <dl>
+          <dl v-for="(item,index) in nav"
+          :key="index"
+          >
             <dt>
               <img
-                src="https://jnup.oss-cn-beijing.aliyuncs.com/product/a01c35e1ce24fa20ef3c0b23648b978e.png"
+                :src="item.imgUrl"
               />
             </dt>
-            <dd>会员专区</dd>
-          </dl>
-          <dl>
-            <dt>
-              <img
-                src="https://jnup.oss-cn-beijing.aliyuncs.com/product/f60f568d90ddea99ec297ea17d65bf98.png"
-              />
-            </dt>
-            <dd>体验会员</dd>
-          </dl>
-          <dl>
-            <dt>
-              <img
-                src="https://jnup.oss-cn-beijing.aliyuncs.com/product/00d94d41b82362749cf4bdb6a84182ab.png"
-              />
-            </dt>
-            <dd>南靖特产</dd>
-          </dl>
-          <dl>
-            <dt>
-              <img
-                src="https://jnup.oss-cn-beijing.aliyuncs.com/product/bd2b19587606ecc47e7b715b331d283d.png"
-              />
-            </dt>
-            <dd>偏远包邮</dd>
-          </dl>
-          <dl>
-            <dt>
-              <img
-                src="https://jnup.oss-cn-beijing.aliyuncs.com/product/9916c8a95d965a4bc78237dfff302d4e.png"
-              />
-            </dt>
-            <dd>夏季驱蚊</dd>
+            <dd>{{item.title}}</dd>
           </dl>
         </div>
         <div class="bao">
           <img
-            src="https://jnup.oss-cn-beijing.aliyuncs.com/product/71444f703ec758791ef64cd327a4ce13.jpg?x-oss-process=style/small"
+            :src="tu"
           />
         </div>
         <div class="tu">
@@ -85,10 +52,10 @@
           </div>
           <img src="/static/images/Group 2.svg" />
         </div>
-        <homeDl></homeDl>
+        <homeDl :dl="dl"></homeDl>
         <div class="tu">
           <img
-            src="https://jnup.oss-cn-beijing.aliyuncs.com/product/f93802560ad3f1ec6c5a2074c90822f7.jpg?x-oss-process=style/small"
+            :src="tu2"
           />
         </div>
         <div class="selected">
@@ -98,10 +65,10 @@
           </div>
           <img src="/static/images/Group 2.svg" />
         </div>
-        <homeDl></homeDl>
+        <homeDl :dl='dl1'></homeDl>
         <div class="tu">
           <img
-            src="https://jnup.oss-cn-beijing.aliyuncs.com/product/ae6d6963d9523ef8b63f2aa8ab7666c0.jpg?x-oss-process=style/small"
+            :src="tu3"
           />
         </div>
         <div class="selected">
@@ -111,10 +78,10 @@
           </div>
           <img src="/static/images/Group 2.svg" />
         </div>
-        <homeDl></homeDl>
+        <homeDl :dl='dl2'></homeDl>
         <div class="tu">
           <img
-            src="https://jnup.oss-cn-beijing.aliyuncs.com/product/e2e81b76eb278e6af9b367ce48625b21.jpg?x-oss-process=style/small"
+            :src="tu3"
           />
         </div>
         <div class="selected">
@@ -124,10 +91,10 @@
           </div>
           <img src="/static/images/Group 2.svg" />
         </div>
-        <homeDl></homeDl>
+        <homeDl :dl='dl3'></homeDl>
         <div class="tu">
           <img
-            src="https://jnup.oss-cn-beijing.aliyuncs.com/product/e2e81b76eb278e6af9b367ce48625b21.jpg?x-oss-process=style/small"
+            :src="tu5"
           />
         </div>
         <div class="selected">
@@ -137,7 +104,7 @@
           </div>
           <img src="/static/images/Group 2.svg" />
         </div>
-        <homeDl></homeDl>
+        <homeDl :dl='dl4'></homeDl>
         <div class="list">
           <div class="selected">
             <div class="nav">
@@ -145,7 +112,7 @@
               <label class="_spans">等你来抢</label>
             </div>
           </div>
-          <homeList></homeList>
+          <homeList :list='listData'></homeList>
         </div>
       </div>
     </section>
@@ -154,6 +121,7 @@
 <script>
 import homeDl from "../../components/dl";
 import homeList from '../../components/list'
+import { mapState, mapActions } from "vuex";
 export default {
   props: {},
   components: {
@@ -163,9 +131,38 @@ export default {
   data() {
     return {};
   },
-  computed: {},
-  methods: {},
+  computed: {
+    ...mapState({
+      // homeData: state => state.home.homeData,
+      swiper: state => state.home.swiper,
+      nav: state => state.home.nav,
+      tu: state => state.home.tu,
+      tu1: state => state.home.tu1,
+      dl: state => state.home.dl,
+      tu2: state => state.home.tu2,
+      dl1: state => state.home.dl1,
+      tu3: state => state.home.tu3,
+      dl2: state => state.home.dl2,
+      tu4: state => state.home.tu4,
+      dl3: state => state.home.dl3,
+      tu5: state => state.home.tu5,
+      dl4: state => state.home.dl4,
+      listData:state => state.home.listData
+    }),
+  },
+  methods: {
+    ...mapActions({
+      getData: 'home/getData',
+      getNavData:'home/getNavData',
+      getLData:'home/getLData'
+    }),
+  },
   created() {},
+  onShow(){
+    this.getData()
+    this.getNavData()
+    this.getLData()
+  },
   mounted() {}
 };
 </script>
@@ -197,7 +194,6 @@ export default {
     height: 100rpx;
     background: #fff;
     overflow-x: auto;
-    
     ._li {
       font-size: 32rpx;
       display: inline-block;
