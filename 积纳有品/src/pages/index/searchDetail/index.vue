@@ -25,11 +25,24 @@
     </div>
     <div class="detChoose">
       <div class="chooseLeft">
-        <p>选择</p>
-        <p>颜色</p>
-        <p>尺码</p>
+        <label class="_span">选择</label>
+        <div class="_div">
+          <label>规格</label>
+          <label>></label>
+        </div>
       </div>
-      <div class="chooseRight">></div>
+      <div class="chooseRight">
+        <label class="_span">提示</label>
+        <div class='div'>
+          <label class="_spans">西藏</label>
+        </div>
+      </div>
+    </div>
+    <div class="imgs">
+      
+    </div>
+    <div class="mask">
+
     </div>
     <div class="btns">
       <p>
@@ -53,10 +66,11 @@ export default {
   mounted() {}
 };
 </script>
-<style scoped lang="">
+<style scoped lang="scss">
 .searchDetail {
   width: 100%;
-  height: 100%;
+
+  overflow-y: auto;
 }
 .u-wrp-bnr {
   width: 100%;
@@ -125,21 +139,46 @@ export default {
   margin-left: 2%;
 }
 .detChoose {
-  margin-left: 2%;
-  width: 96%;
-  height: 50rpx;
-  line-height: 50rpx;
-  display: flex;
-  justify-content: space-between;
-  color: #999;
-  font-size: 25rpx;
-  margin-top: 40rpx;
-}
-.chooseLeft {
-  display: flex;
-}
-.chooseLeft > p {
-  margin-right: 15rpx;
+  width:100%;
+  padding:0 2%;
+  box-sizing:border-box;
+  .chooseLeft{
+    display:flex;
+    font-size:26rpx;
+    height:80rpx;
+    line-height:80rpx;
+    ._span{
+      color:#676767;
+    }
+    ._div{
+      flex:1;
+      color:#323a45;
+      display:flex;
+      padding:0 10rpx;
+      box-sizing:border-box;
+      justify-content:space-between;
+    }
+  }
+  .chooseRight{
+    display:flex;
+    font-size:26rpx;
+    height:80rpx;
+    line-height:80rpx;
+    ._span{
+      color:#676767;
+    }
+    .div{
+      flex:1;
+      color:#323a45;
+      display:flex;
+      padding:0 10rpx;
+      box-sizing:border-box;
+      justify-content:space-between;
+      ._spans{
+        color:#fc5d7b;
+      }
+    }
+  }
 }
 .btns {
   position: fixed;

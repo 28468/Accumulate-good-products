@@ -4,12 +4,12 @@
       <input placeholder="搜索" disabled/>
     </div>
     <nav class="_scroll">
-      <li class="_li active">今日推荐</li>
-      <li class="_li">奶粉</li>
-      <li class="_li">尿不湿</li>
-      <li class="_li">运动户外</li>
-      <li class="_li">母婴专区</li>
-      <li class="_li">家具生活</li>
+      <li 
+      v-for="(item,index) in tab"
+      :key="index"
+      :class="[index===ind?'active':'null']"
+      @click="click(item,index)"
+      >{{item.cname}}</li>
     </nav>
     <section class="main">
       <div class="conter">
@@ -129,7 +129,8 @@ export default {
     homeList
   },
   data() {
-    return {};
+    return {
+    };
   },
   computed: {
     ...mapState({
@@ -147,15 +148,22 @@ export default {
       dl3: state => state.home.dl3,
       tu5: state => state.home.tu5,
       dl4: state => state.home.dl4,
-      listData:state => state.home.listData
+      tab:state => state.home.tab,
+      listData:state => state.home.listData,
+      ind:state => state.home.ind
     }),
   },
   methods: {
     ...mapActions({
       getData: 'home/getData',
       getNavData:'home/getNavData',
-      getLData:'home/getLData'
+      getLData:'home/getLData',
+      getInd:'home/getInd'
     }),
+    click(item,index){
+      this.getInd({index,item})
+      wx.navigateTo({ url: "classify/main" });
+    }
   },
   created() {},
   onShow(){
