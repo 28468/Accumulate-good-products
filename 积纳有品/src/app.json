@@ -12,7 +12,10 @@
     "pages/wode/card/main",
     "pages/wode/addressDetail/main",
     "pages/wode/conect/main",
-    "pages/wode/address/main"
+    "pages/wode/address/main",
+    "pages/wode/setting/main",
+    "pages/wode/personMessage/main",
+    "pages/wode/phone/main"
     
   ],
   "window": {
