@@ -1,6 +1,6 @@
-# One-sided approach [积纳有品](https://github.com/28468/Accumulate-good-products/tree/liubinbin)
+# Accumulate-good-products [积纳有品](https://github.com/28468/Accumulate-good-products/tree/liubinbin)
 
-> ​One-sided approach 是积纳有品 设计的 小程序。项目是基于 mpvue。
+> ​Accumulate-good-products 是积纳有品 设计的 小程序。项目是基于 mpvue。
 
 
 ##功能列表
