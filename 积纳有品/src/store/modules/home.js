@@ -59,10 +59,11 @@ const mutations = {
     },
     //详情所有数据
     getdData(state,payload){
+        console.log("payloadddddddd",payload)
         state.detail = payload
     },
     getNum(state,payload){
-        console.log('num...',payload)
+        // console.log('num...',payload)
         state.num = payload
     },
     getImg(state,payload){

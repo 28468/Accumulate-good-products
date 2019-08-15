@@ -1,7 +1,28 @@
 <template>
   <div class="searchDetail">
-    <div class="u-wrp-bnr" autoplay="true">
-      <img :src="detail.mainImgUrl"/>
+    <div class="swiper">
+      <template v-if="detail.supplierProductPictureVoList.length != 0">
+        <swiper class="u-wrp-bnr" autoplay="true">
+          <swiper-item class="u-item" 
+          v-for="(item,index) in detail.supplierProductPictureVoList"
+          :key="index"
+          @change="swiperChange"
+          >
+            <image :src='item.imgUrl' class='u-img-slide' mode='aspectFill'></image>
+          </swiper-item>
+        </swiper>
+        <lable class="iNum">
+          <span>{{swiperCurrent}}</span>
+          <span>/{{detail.supplierProductPictureVoList.length}}</span>
+        </lable>
+      </template>
+      <template v-if="detail.supplierProductPictureVoList.length === 0">
+        <img :src="detail.mainImgUrl"/>
+        <lable class="iNum">
+          <span>1</span>
+          <span>/1</span>
+        </lable>
+      </template>
     </div>
     <div class="detMoney">
       <span>￥{{detail.salesPrice}}</span>
@@ -77,7 +98,7 @@
       </div>
     </div>
     <div class="btns">
-      <p>
+      <p @click="goCanvas">
         分享赚
         <span>{{detail.earnMoney}}</span>
       </p>
@@ -93,7 +114,8 @@ export default {
   data() {
     return {
       flag:false,
-      ind:0
+      ind:0,
+      swiperCurrent:0
     };
   },
   computed: {
@@ -113,6 +135,16 @@ export default {
     },
     indClick(index){
       this.ind = index
+    },
+    goCanvas(){
+      wx.navigateTo({url: '../canvas/main'});
+    },
+    swiperChange(e) { 
+      console.log(e); 
+      this.swiperCurrent = e.detail.current
+      // this.setData({
+      //   swiperCurrent: e.detail.current   //获取当前轮播图片的下标
+      // })
     }
   },
   
@@ -126,13 +158,47 @@ export default {
 
   overflow-y: auto;
 }
-.u-wrp-bnr {
+.swiper {
   width: 100%;
   height: 750rpx;
-  display: block;
+  position: relative;
   img{
     width: 100%;
     height: 100%;
+  }
+  .u-wrp-bnr{
+    width:100%;
+    height:750rpx;
+    box-sizing:border-box;
+    display: block;
+    .u-item{
+      position:absolute;
+      width:100%;
+      height:100%;
+      transform:translate(0%, 0px) translateZ(0px);
+      display:block;
+      overflow:hidden;
+      will-change:transform;
+      image{
+        height:100%;
+        width:100%;
+        border-radius:10rpx;
+        display:inline-block;
+        overflow:hidden;
+      }
+    }
+  }
+  .iNum{
+    position: absolute;
+    right: 20rpx;
+    bottom: 10%;
+    color: #fff;
+    font-size: 24rpx;
+    background: #000;
+    border-radius: 16rpx;
+    opacity: .5;
+    padding: 4rpx 8rpx;
+    box-sizing: border-box;
   }
 }
 .u-item {

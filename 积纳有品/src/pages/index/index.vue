@@ -241,29 +241,28 @@ export default {
         margin-bottom: 20rpx;
         margin-top: 10rpx;
         box-sizing: border-box;
-       .u-wrp-bnr{
+        .u-wrp-bnr{
          width:100%;
-height:39.5vw;
-box-sizing:border-box;
-display: block;
-     .u-item{
-       position:absolute;
-width:100%;
-height:100%;
-transform:translate(0%, 0px) translateZ(0px);
- display:block;
-overflow:hidden;
-will-change:transform;
- image{
-   height:100%;
-width:100%;
-border-radius:10rpx;
-display:inline-block;
-overflow:hidden;
-
- }
-     }
-       }
+          height:39.5vw;
+          box-sizing:border-box;
+          display: block;
+          .u-item{
+            position:absolute;
+            width:100%;
+            height:100%;
+            transform:translate(0%, 0px) translateZ(0px);
+            display:block;
+            overflow:hidden;
+            will-change:transform;
+            image{
+              height:100%;
+              width:100%;
+              border-radius:10rpx;
+              display:inline-block;
+              overflow:hidden;
+            }
+          }
+        }
       }
       .conter-nav {
         display: flex;
