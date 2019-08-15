@@ -1,6 +1,6 @@
 <template>
    <div class='address'>
-      <button>新增收货地址</button>
+      <button @click="goAddress">新增收货地址</button>
    </div>
 </template>
 <script>
@@ -12,7 +12,14 @@ export default {
     return {
 
     }
-  }
+  },
+  methods: {
+    goAddress(){
+      wx.navigateTo({
+         url:'/pages/wode/addressDetail/main'
+       })
+    }
+  },
  
 }
 </script>

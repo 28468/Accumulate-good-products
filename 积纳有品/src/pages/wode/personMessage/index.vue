@@ -1,9 +1,9 @@
 <template>
    <div class='personMessage'>
-         <img/>
-          <span>默默许愿00</span>
-       <p><em>性别</em><em>未设置></em></p>
-       <p><em>我的手机号</em><em>未绑定></em></p>
+        <img/>
+        <span>默默许愿00</span>
+        <p><em>性别</em><em>未设置></em></p>
+        <p @click='goPhone'><em>我的手机号</em><em>未绑定></em></p>
    </div>
 </template>
 <script>
@@ -15,7 +15,14 @@ export default {
     return {
 
     }
-  }
+  },
+  methods: {
+    goPhone(){
+       wx.navigateTo({
+         url:'/pages/wode/phone/main'
+       })
+    }
+  },
  
 }
 </script>
