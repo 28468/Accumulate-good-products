@@ -18,6 +18,7 @@
                 <swiper-item class="u-item" 
                 v-for="(item,index) in swiper"
                 :key="index"
+                @click="swiperTopic(item)"
                 >
                   <image :src='item.imgUrl' class='u-img-slide' mode='aspectFill'></image>
                 </swiper-item>
@@ -26,6 +27,7 @@
         <div class="conter-nav">
           <dl v-for="(item,index) in nav"
           :key="index"
+          @click="goTopic(item)"
           >
             <dt>
               <img
@@ -158,11 +160,20 @@ export default {
       getData: 'home/getData',
       getNavData:'home/getNavData',
       getLData:'home/getLData',
-      getInd:'home/getInd'
+      getInd:'home/getInd',
+      getTopicList:'topic/getTopicList'
     }),
     click(item,index){
       this.getInd({index,item})
       wx.navigateTo({ url: "classify/main" });
+    },
+    goTopic(item){
+      this.getTopicList(item.contentValue)
+      wx.navigateTo({url:'topic/main'})
+    },
+    swiperTopic(item){
+      this.getTopicList(item.contentValue)
+      wx.navigateTo({url:'topic/main'})
     }
   },
   created() {},

@@ -3,6 +3,7 @@
     <div class="content" 
     v-for="(item,index) in list"
     :key="index"
+    @click='detail(item)'
     >
       <div class="img">
         <img
@@ -47,7 +48,7 @@ export default {
       getDetailImg: "home/getDetailImg"
     }),
     detail(item){
-      let pid=item.jumpUrl.split("product")[1].split("&")[1].split("=")[1]
+      let pid=item.productVo.jumpUrl.split("product")[1].split("&")[1].split("=")[1]
       this.getDetailData(pid)
       this.getDetailNum(pid)
       this.getDetailImg(pid)
