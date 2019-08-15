@@ -17,7 +17,7 @@
   - [x] 联系客服
   - [x] 我的订单
 
-## One-sided approach Screenshots
+## Accumulate-good-products Screenshots
 
 |         首页        |         个人中心        |         专题        |
 | :------------------: | :----------------------: | :------------------: |
@@ -34,7 +34,7 @@
 
 ## End
 
-> - 喜欢 One-sided approach，帮忙点个 Star 吧!
+> - 喜欢 Accumulate-good-products，帮忙点个 Star 吧!
 > - 作者还会不断更新， 您的支持是作者不断更新的动力!
 > - Thanks!
 

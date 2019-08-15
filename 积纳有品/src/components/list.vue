@@ -27,6 +27,7 @@
   </div>
 </template>
 <script>
+import { mapState, mapMutations, mapActions } from "vuex";
 export default {
   props: {
     list: {
@@ -39,7 +40,20 @@ export default {
     return {};
   },
   computed: {},
-  methods: {},
+  methods: {
+     ...mapActions({
+      getDetailData: "home/getDetailData",
+      getDetailNum: "home/getDetailNum",
+      getDetailImg: "home/getDetailImg"
+    }),
+    detail(item){
+      let pid=item.jumpUrl.split("product")[1].split("&")[1].split("=")[1]
+      this.getDetailData(pid)
+      this.getDetailNum(pid)
+      this.getDetailImg(pid)
+      wx.navigateTo({ url: "searchDetail/main" });
+    }
+  },
   created() {},
   mounted() {}
 };

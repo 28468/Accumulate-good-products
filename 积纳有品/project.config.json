@@ -22,7 +22,6 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.7.7",
-<<<<<<< HEAD
 	"appid": "wx3375420e2c184d34",
 	"projectname": "Accumulate",
 	"miniprogramRoot": "dist/wx/",
@@ -31,14 +30,6 @@
 		"hidedInDevtools": []
 	},
 	"scripts": {},
-=======
-	"appid": "wxd35f70764c2a0406",
-	"projectname": "miniprogram-1",
-	"debugOptions": {
-		"hidedInDevtools": []
-	},
-	"isGameTourist": false,
->>>>>>> 10464742de06ae79bd8288a73a24db60953a7704
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {
