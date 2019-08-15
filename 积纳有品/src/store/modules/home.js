@@ -59,7 +59,6 @@ const mutations = {
     },
     //详情所有数据
     getdData(state,payload){
-        console.log("aaaaaa",payload)
         state.detail = payload
     },
     getNum(state,payload){

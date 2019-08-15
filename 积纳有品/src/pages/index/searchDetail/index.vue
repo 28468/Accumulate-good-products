@@ -17,7 +17,7 @@
       <b>快递包邮</b>
     </div>
     <div class="detChoose">
-      <div class="chooseLeft" @click="click(this.flag = !this.flag)">
+      <div class="chooseLeft" @click="click">
         <label class="_span">选择</label>
         <div class="_div">
           <label>数量</label>
@@ -36,14 +36,14 @@
       v-for="(item,index) in img"
       :key="index"
       :src="item.imgUrl"
-      :style="{'height':item.imgHeight}"
+      :style="{'height':item.imgHeight+'rpx'}"
       />
     </div>
-    <div class="mask">
+    <div class="mask" v-if="flag">
       <div class="div">
         <div class="_p">
-          <label class="_span">{{num.aname}}</label>
-          <label class="_span">x</label>
+          <label class="_span">数量</label>
+          <label class="_span" @click="guan">x</label>
         </div>
         <div class="_dl">
           <div class="dt">
@@ -57,8 +57,12 @@
         <div class="_div">
           <div class="_p">数量</div>
           <div class="jian">
-            <div class="divs">{{num.attributeValueRelationVoList[0].vname}}</div>
-            <div class="divss">{{num.attributeValueRelationVoList[1].vname}}</div>
+            <div class="divs"
+            v-for="(item,index) in num[0].attributeValueRelationVoList"
+            :key="index"
+            :class="[index===ind?'action':'null']"
+            @click="indClick(index)"
+            >{{item.vname}}</div>
           </div>
         </div>
         <div class="_divs">
@@ -88,7 +92,8 @@ export default {
   components: {},
   data() {
     return {
-      flag:false
+      flag:false,
+      ind:0
     };
   },
   computed: {
@@ -100,7 +105,15 @@ export default {
     })
   },
   methods: {
-    
+    click(){
+      this.flag = !this.flag
+    },
+    guan(){
+      this.flag = false
+    },
+    indClick(index){
+      this.ind = index
+    }
   },
   
   created() {},
@@ -298,21 +311,17 @@ export default {
         display: flex;
         flex-wrap: wrap;
         .divs{
-          background: #33d6c5;
-          color: #fff;
-          border: 2rpx solid #33d6c5;
-          padding: 6rpx 16rpx;
-          box-sizing: border-box;
-          margin: 10rpx 20rpx;
-          font-size: 24rpx;
-        }
-        .divss{
           border: 2rpx solid #ccc;
           padding: 6rpx 16rpx;
           box-sizing: border-box;
           margin: 10rpx 20rpx;
           font-size: 24rpx;
           border-radius: 10rpx;
+        }
+        .action{
+          background: #33d6c5;
+          color: #fff;
+          border: 2rpx solid #33d6c5;
         }
       }
     }

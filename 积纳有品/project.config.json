@@ -30,6 +30,11 @@
 		"hidedInDevtools": []
 	},
 	"scripts": {},
+<<<<<<< HEAD
+=======
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+>>>>>>> 70bc0e6c3a342ab777ccd03bdb155184a0ba09b7
 	"condition": {
 		"search": {
 			"current": -1,
