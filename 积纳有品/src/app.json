@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/canvas/main",
     "pages/wode/person/main",
+    "pages/index/share/main",
     "pages/wode/personDetail/main",
     "pages/wode/prove/main",
     "pages/index/classify/main",

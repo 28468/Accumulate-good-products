@@ -1,4 +1,4 @@
-import { topicInfo } from '@/service';
+import { topicInfo, toShare} from '@/service';
 // 模块所有的状态
 const state = {
   list: {},

@@ -76,7 +76,7 @@
           </div>
         </div>
         <div class="_div">
-          <div class="_p">数量</div>
+          <div class="_p">默认</div>
           <div class="jian">
             <div class="divs"
             v-for="(item,index) in num[0].attributeValueRelationVoList"
@@ -148,7 +148,9 @@ export default {
     }
   },
   
-  created() {},
+  created() {
+  console.log(this.flag)
+  },
   mounted() {}
 };
 </script>
@@ -297,6 +299,7 @@ export default {
     height:80rpx;
     line-height:80rpx;
     ._span{
+      padding: 20rpx;
       color:#676767;
     }
     .div{
@@ -314,9 +317,11 @@ export default {
 }
 .imgs{
   width: 100%;
+  height: 400rpx;
   margin-bottom: 120rpx;
   img{
     width: 100%;
+    height: 100%;
   }
 }
 .mask{
