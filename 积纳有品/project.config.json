@@ -5,7 +5,7 @@
 	},
 	"setting": {
 		"urlCheck": false,
-		"es6": true,
+		"es6": false,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
@@ -22,7 +22,6 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.7.7",
-<<<<<<< HEAD
 	"appid": "wx3375420e2c184d34",
 	"projectname": "Accumulate",
 	"miniprogramRoot": "dist/wx/",
@@ -31,16 +30,6 @@
 		"hidedInDevtools": []
 	},
 	"scripts": {},
-=======
-	"appid": "wxd35f70764c2a0406",
-	"projectname": "miniprogram-1",
-	"debugOptions": {
-		"hidedInDevtools": []
-	},
-	"isGameTourist": false,
->>>>>>> 10464742de06ae79bd8288a73a24db60953a7704
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -58,148 +47,63 @@
 			"list": []
 		},
 		"miniprogram": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-			"current": 11,
-=======
-			"current": 7,
->>>>>>> 87c000b1fd55bd3355791031664d59b9e531051b
-=======
-			"current": 13,
->>>>>>> 10464742de06ae79bd8288a73a24db60953a7704
+			"current": 5,
 			"list": [
 				{
 					"id": -1,
-					"name": "pages/wode/address/main",
-					"pathName": "pages/wode/address/main",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/wode/person/main",
-					"pathName": "pages/wode/person/main",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/wode/conect/main",
-					"pathName": "pages/wode/conect/main",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/wode/addressDetail/main",
-					"pathName": "pages/wode/addressDetail/main",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/wode/card/main",
-					"pathName": "pages/wode/card/main",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/index/main",
-					"pathName": "pages/index/main",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-<<<<<<< HEAD
-					"name": "实名认证",
-					"pathName": "pages/wode/prove/main",
-=======
-					"name": "pages/index/topic/main",
+					"name": "专题页面",
 					"pathName": "pages/index/topic/main",
->>>>>>> 10464742de06ae79bd8288a73a24db60953a7704
 					"query": "",
 					"scene": null
 				},
 				{
-<<<<<<< HEAD
-<<<<<<< HEAD
 					"id": -1,
-=======
-					"id": 7,
->>>>>>> 87c000b1fd55bd3355791031664d59b9e531051b
-					"name": "我的订单",
-					"pathName": "pages/wode/person/main",
-					"query": "",
-					"scene": null
-<<<<<<< HEAD
-				},
-				{
-					"id": -1,
-					"name": "收货地址",
-					"pathName": "pages/wode/address/main",
-=======
-					"id": -1,
-					"name": "pages/wode/main",
+					"name": "个人中心",
 					"pathName": "pages/wode/main",
->>>>>>> 10464742de06ae79bd8288a73a24db60953a7704
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "pages/index/main",
-					"pathName": "pages/index/main",
+					"name": "购物车",
+					"pathName": "pages/shopCar/main",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": 9,
-					"name": "pages/index/classify/main",
+					"id": -1,
+					"name": "商品详情",
+					"pathName": "pages/index/searchDetail/main",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "分类",
 					"pathName": "pages/index/classify/main",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-<<<<<<< HEAD
-					"name": "添加具体地址",
-					"pathName": "pages/wode/addressDetail/main",
-=======
-					"name": "pages/index/searchDetail/main",
-					"pathName": "pages/index/searchDetail/main",
->>>>>>> 10464742de06ae79bd8288a73a24db60953a7704
+					"name": "首页",
+					"pathName": "pages/index/main",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-<<<<<<< HEAD
-					"name": "我的优惠券",
-					"pathName": "pages/wode/card/main",
-=======
-					"name": "绑定手机号",
-					"pathName": "pages/wode/phone/main",
+					"name": "实名认证",
+					"pathName": "pages/wode/prove/main",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "个人信息",
-					"pathName": "pages/wode/personMessage/main",
+					"id": 7,
+					"name": "我的订单",
+					"pathName": "pages/wode/person/main",
 					"query": "",
 					"scene": null
-				},
-				{
-					"id": 13,
-					"name": "设置",
-					"pathName": "pages/wode/setting/main",
-					"query": "",
->>>>>>> 10464742de06ae79bd8288a73a24db60953a7704
-					"scene": null
-=======
->>>>>>> 87c000b1fd55bd3355791031664d59b9e531051b
 				}
 			]
 		}
