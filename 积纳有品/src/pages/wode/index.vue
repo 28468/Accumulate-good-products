@@ -5,28 +5,28 @@
      </div>
      <div class="middle">
         <div class="order">
-          <h1>我的订单</h1>
+          <h1 >我的订单</h1>
           <ul class="orderList">
-            <li>
+            <li @click='goOrder'>
               <img src='/static/images/fukuan.png'/>
               <em>待付款</em>
             </li>
-            <li>
+            <li @click='goOrder'>
               <img src='/static/images/daifahuo.png'/>
               <em>待发货</em>
             </li>
-            <li>
+            <li @click='goOrder'>
               <img src='/static/images/daishouhuo.png'/>
               <em>待收货</em>
             </li>
-            <li>
+            <li @click='goOrder'>
               <img src='../../../static/images/Group 4(3).svg'/>
               <em>退款退货</em>
             </li>
           </ul>
         </div>
         <ol class="list">
-            <li>
+            <li @click="goCard">
               <span><img src='/static/images/quan.png'/>我的优惠券</span>
               <em>></em>
             </li>
@@ -38,14 +38,14 @@
               <span><img src='/static/images/share.png'/>我的分享</span>
                <em>></em>
             </li>
-             <li>
+             <li @click="goConect">
               <span><img src='/static/images/kefu.png'/>联系客服</span>
                <em>></em>
-            </li>
-            <li>
-              <span><img src='/static/images/shezhi.png'/>设置</span>
-               <em>></em>
-            </li>
+             </li>
+              <li @click="goSetting">
+                <span><img src='/static/images/shezhi.png'/>设置</span>
+                <em>></em>
+              </li>
         </ol>
      </div>
   
@@ -53,27 +53,30 @@
 </template>
 <script>
 export default {
-  props:{
-
-  },
-  components:{
-  },
-  data(){
-    return {
-    }
-  },
-  computed:{
-
-  },
+ 
   methods:{
-
+       goOrder(){
+          wx.navigateTo({
+              url:'/pages/wode/person/main'
+       })
+       },
+       goCard(){
+         wx.navigateTo({
+              url:'/pages/wode/card/main'
+       })
+       },
+       goSetting(){
+          wx.navigateTo({
+              url:'/pages/wode/setting/main'
+       })
+       },
+       goConect(){
+          wx.navigateTo({
+            url:'/pages/wode/conect/main'
+      })
+       }
   },
-  created(){
 
-  },
-  mounted(){
-
-  }
 }
 </script>
 <style scoped lang="scss">

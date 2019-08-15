@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/index/detail/main",
     "pages/wode/prove/main",
     "pages/wode/person/main",
     "pages/wode/personDetail/main",
