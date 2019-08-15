@@ -17,7 +17,7 @@
       <b>快递包邮</b>
     </div>
     <div class="detChoose">
-      <div class="chooseLeft" @click="click(this.flag = !this.flag)">
+      <div class="chooseLeft" @click="click">
         <label class="_span">选择</label>
         <div class="_div">
           <label>数量</label>
@@ -36,14 +36,14 @@
       v-for="(item,index) in img"
       :key="index"
       :src="item.imgUrl"
-      :style="{'height':item.imgHeight}"
+      :style="{'height':item.imgHeight+'rpx'}"
       />
     </div>
-    <div class="mask">
+    <div class="mask" v-if="flag">
       <div class="div">
         <div class="_p">
           <label class="_span">{{num.aname}}</label>
-          <label class="_span">x</label>
+          <label class="_span" @click="close">x</label>
         </div>
         <div class="_dl">
           <div class="dt">
@@ -55,10 +55,10 @@
           </div>
         </div>
         <div class="_div">
-          <div class="_p">数量</div>
+          <div class="_p">默认</div>
           <div class="jian">
-            <div class="divs">{{num.attributeValueRelationVoList[0].vname}}</div>
-            <div class="divss">{{num.attributeValueRelationVoList[1].vname}}</div>
+            <!-- <div class="divs">{{num[0].attributeValueRelationVoList[0].vname}}</div>
+            <div class="divss">{{num[0].attributeValueRelationVoList[1].vname}}</div> -->
           </div>
         </div>
         <div class="_divs">
@@ -73,7 +73,7 @@
       </div>
     </div>
     <div class="btns">
-      <p>
+      <p @click="goShare">
         分享赚
         <span>{{detail.earnMoney}}</span>
       </p>
@@ -100,10 +100,21 @@ export default {
     })
   },
   methods: {
-    
+      goShare(){
+      console.log(this.detail.pid)
+      wx.navigateTo({ url: "/pages/index/share/main?pid="+this.detail.pid });
+   },
+    click(){
+      this.flag = !this.flag;
+    },
+    close(){
+       this.flag = false
+    }
   },
   
-  created() {},
+  created() {
+  console.log(this.flag)
+  },
   mounted() {}
 };
 </script>
@@ -218,6 +229,7 @@ export default {
     height:80rpx;
     line-height:80rpx;
     ._span{
+      padding: 20rpx;
       color:#676767;
     }
     .div{
@@ -235,9 +247,11 @@ export default {
 }
 .imgs{
   width: 100%;
+  height: 400rpx;
   margin-bottom: 120rpx;
   img{
     width: 100%;
+    height: 100%;
   }
 }
 .mask{
