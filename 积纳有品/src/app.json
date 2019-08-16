@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/canvas/main",
+    "pages/wode/prove/main",
+    "pages/wode/person/main",
+    "pages/index/share/main",
+    "pages/wode/personDetail/main",
+    "pages/index/classify/main",
+    "pages/shopCar/main",
+    "pages/wode/main",
+    "pages/index/topic/main",
+    "pages/index/main",
+    "pages/index/searchDetail/main",
+    "pages/wode/card/main",
+    "pages/wode/addressDetail/main",
+    "pages/wode/conect/main",
+    "pages/wode/address/main",
+    "pages/wode/setting/main",
+    "pages/wode/personMessage/main",
+    "pages/wode/phone/main"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/main",
+        "text": "首页",
+        "iconPath": "static/tabs/home1.png",
+        "selectedIconPath": "static/tabs/home2.png"
+      },
+      {
+        "pagePath": "pages/shopCar/main",
+        "text": "购物车",
+        "iconpath": "static/tabs/car1.png",
+        "selectedIconPath": "static/tabs/car2.png"
+      },
+      {
+        "pagePath": "pages/wode/main",
+        "text": "我的",
+        "iconPath": "static/tabs/wode1.png",
+        "selectedIconPath": "static/tabs/wode2.png"
+      }
+    ]
+  }
+}
