@@ -1,15 +1,16 @@
 {
   "pages": [
-    "pages/index/main",
+    "pages/index/canvas/main",
     "pages/wode/prove/main",
     "pages/wode/person/main",
     "pages/index/share/main",
     "pages/wode/personDetail/main",
     "pages/index/classify/main",
-    "pages/index/searchDetail/main",
     "pages/shopCar/main",
     "pages/wode/main",
     "pages/index/topic/main",
+    "pages/index/main",
+    "pages/index/searchDetail/main",
     "pages/wode/card/main",
     "pages/wode/addressDetail/main",
     "pages/wode/conect/main",

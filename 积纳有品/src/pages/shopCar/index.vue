@@ -20,7 +20,7 @@
          <div class="list-box">
            <span>-</span>
            <p>1</p>
-           <span>+</span>
+     
            <span>+</span>
          </div>
       </div>
@@ -42,12 +42,14 @@
   </div>
 </template>
 <script>
+import { mapState, mapActions } from "vuex";
 export default {
   props:{
   },
   components:{
   },
-  data(){
+  data() {
+    var num = 0;
     return {
     }
   },

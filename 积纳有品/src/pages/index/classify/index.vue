@@ -26,7 +26,7 @@
         </div>
       </div>
       <div class="section-main">
-        <dl class="list" v-for="(item,index) in list" :key="index" @click='godetails'>
+        <dl class="list" v-for="(item,index) in list" :key="index" @click='detail(item)'>
           <dt>
             <img class="list-img" :src="item.mainImgUrl" alt />
           </dt>
@@ -74,10 +74,17 @@ export default {
   },
   methods: {
     ...mapActions({
+      getDetailData: "home/getDetailData",
+      getDetailNum: "home/getDetailNum",
+      getDetailImg: "home/getDetailImg",
       getInd:'home/getInd'
     }),
-    godetails(){
-      
+    detail(item){
+      let pid=item.pid
+      this.getDetailData(pid)
+      this.getDetailNum(pid)
+      this.getDetailImg(pid)
+      wx.navigateTo({ url: "../searchDetail/main" });
     },
     topTab(index,item){
       this.getInd({index,item})

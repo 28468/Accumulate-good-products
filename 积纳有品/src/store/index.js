@@ -5,7 +5,8 @@ import CreateLogger from 'vuex/dist/logger';
 // 引入store子模块
 import home from './modules/home';
 import topic from './modules/topic';
-import classify from './modules/classify'
+import classify from './modules/classify';
+import shopCar from './modules/shopCar'
 Vue.use(Vuex);
 
 
@@ -13,7 +14,8 @@ export default new Vuex.Store({
   modules: {
     home,
     topic,
-    classify
+    classify,
+    shopCar
   },
   plugins: [CreateLogger()]
 })

@@ -5,7 +5,7 @@
 	},
 	"setting": {
 		"urlCheck": false,
-		"es6": true,
+		"es6": false,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
@@ -22,16 +22,29 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.7.7",
+<<<<<<< HEAD
+	"appid": "wx3375420e2c184d34",
+	"projectname": "Accumulate",
+=======
 	"appid": "wxd35f70764c2a0406",
 	"projectname": "miniprogram-1",
+>>>>>>> 42f3bae1a284c682905b5d913b893b3d66b9b0fc
 	"miniprogramRoot": "dist/wx/",
 	"cloudfunctionTemplateRoot": "",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
 	"scripts": {},
+<<<<<<< HEAD
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
+=======
+<<<<<<< HEAD
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+=======
+>>>>>>> 42f3bae1a284c682905b5d913b893b3d66b9b0fc
+>>>>>>> 3b845604752597816ed2d8aa6c00ec139fbad5db
 	"condition": {
 		"search": {
 			"current": -1,
@@ -49,98 +62,199 @@
 			"list": []
 		},
 		"miniprogram": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+			"current": 12,
+=======
+			"current": 8,
+>>>>>>> a1c1472fc4bf258ff37c8a60b82bb93f5d0c038e
+			"list": [
+				{
+					"id": -1,
+					"name": "专题页面",
+					"pathName": "pages/index/topic/main",
+<<<<<<< HEAD
+=======
 			"current": 1,
 			"list": [
 				{
 					"id": 0,
 					"name": "新收货地址按钮",
 					"pathName": "pages/wode/address/main",
+>>>>>>> 42f3bae1a284c682905b5d913b893b3d66b9b0fc
+=======
+>>>>>>> a1c1472fc4bf258ff37c8a60b82bb93f5d0c038e
 					"query": "",
 					"scene": null
 				},
 				{
+<<<<<<< HEAD
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/wode/main",
+<<<<<<< HEAD
+=======
 					"id": 1,
 					"name": "我的订单",
 					"pathName": "pages/wode/person/main",
+>>>>>>> 42f3bae1a284c682905b5d913b893b3d66b9b0fc
+=======
+>>>>>>> a1c1472fc4bf258ff37c8a60b82bb93f5d0c038e
 					"query": "",
 					"scene": null
 				},
 				{
+<<<<<<< HEAD
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/shopCar/main",
+<<<<<<< HEAD
+=======
 					"id": 2,
 					"name": "联系客服",
 					"pathName": "pages/wode/conect/main",
+>>>>>>> 42f3bae1a284c682905b5d913b893b3d66b9b0fc
+=======
+>>>>>>> a1c1472fc4bf258ff37c8a60b82bb93f5d0c038e
 					"query": "",
 					"scene": null
 				},
 				{
+<<<<<<< HEAD
+					"id": -1,
+					"name": "商品详情",
+					"pathName": "pages/index/searchDetail/main",
+<<<<<<< HEAD
+=======
 					"id": 3,
 					"name": "新增收货地址",
 					"pathName": "pages/wode/addressDetail/main",
+>>>>>>> 42f3bae1a284c682905b5d913b893b3d66b9b0fc
+=======
+>>>>>>> a1c1472fc4bf258ff37c8a60b82bb93f5d0c038e
 					"query": "",
 					"scene": null
 				},
 				{
+<<<<<<< HEAD
+					"id": -1,
+					"name": "分类",
+					"pathName": "pages/index/classify/main",
+<<<<<<< HEAD
+=======
 					"id": 4,
 					"name": "卡券",
 					"pathName": "pages/wode/card/main",
+>>>>>>> 42f3bae1a284c682905b5d913b893b3d66b9b0fc
+=======
+>>>>>>> a1c1472fc4bf258ff37c8a60b82bb93f5d0c038e
 					"query": "",
 					"scene": null
 				},
 				{
+<<<<<<< HEAD
+					"id": -1,
+<<<<<<< HEAD
+=======
 					"id": 5,
+>>>>>>> 42f3bae1a284c682905b5d913b893b3d66b9b0fc
+=======
+>>>>>>> a1c1472fc4bf258ff37c8a60b82bb93f5d0c038e
 					"name": "首页",
 					"pathName": "pages/index/main",
 					"query": "",
 					"scene": null
 				},
 				{
+<<<<<<< HEAD
+<<<<<<< HEAD
+					"id": -1,
+					"name": "实名认证",
+					"pathName": "pages/wode/prove/main",
+=======
 					"id": 6,
 					"name": "专题",
 					"pathName": "pages/index/topic/main",
+>>>>>>> 42f3bae1a284c682905b5d913b893b3d66b9b0fc
+=======
+					"id": -1,
+					"name": "实名认证",
+					"pathName": "pages/wode/prove/main",
+>>>>>>> a1c1472fc4bf258ff37c8a60b82bb93f5d0c038e
 					"query": "",
 					"scene": null
 				},
 				{
+<<<<<<< HEAD
+<<<<<<< HEAD
+					"id": -1,
+=======
+					"id": 7,
+>>>>>>> a1c1472fc4bf258ff37c8a60b82bb93f5d0c038e
+					"name": "我的订单",
+					"pathName": "pages/wode/person/main",
+=======
 					"id": 7,
 					"name": "个人中心",
 					"pathName": "pages/wode/main",
+>>>>>>> 42f3bae1a284c682905b5d913b893b3d66b9b0fc
 					"query": "",
 					"scene": null
 				},
 				{
+<<<<<<< HEAD
+					"id": -1,
+<<<<<<< HEAD
+					"name": "收货地址",
+					"pathName": "pages/wode/address/main",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "联系客服",
+					"pathName": "pages/wode/conect/main",
+=======
 					"id": 9,
 					"name": "分类",
 					"pathName": "pages/index/classify/main",
+>>>>>>> 42f3bae1a284c682905b5d913b893b3d66b9b0fc
 					"query": "",
 					"scene": null
 				},
 				{
+<<<<<<< HEAD
+					"id": -1,
+					"name": "添加具体地址",
+					"pathName": "pages/wode/addressDetail/main",
+=======
 					"id": 9,
 					"name": "商品详情",
 					"pathName": "pages/index/searchDetail/main",
+>>>>>>> 42f3bae1a284c682905b5d913b893b3d66b9b0fc
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
+<<<<<<< HEAD
+					"name": "我的优惠券",
+					"pathName": "pages/wode/card/main",
+=======
 					"name": "绑定手机号",
 					"pathName": "pages/wode/phone/main",
+>>>>>>> 42f3bae1a284c682905b5d913b893b3d66b9b0fc
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "个人信息",
-					"pathName": "pages/wode/personMessage/main",
+					"name": "画布",
+					"pathName": "pages/index/canvas/main",
 					"query": "",
 					"scene": null
-				},
-				{
-					"id": 13,
-					"name": "设置",
-					"pathName": "pages/wode/setting/main",
-					"query": "",
-					"scene": null
+<<<<<<< HEAD
+=======
 				},
 				{
 					"id": -1,
@@ -148,6 +262,12 @@
 					"pathName": "pages/index/detail/main",
 					"query": "",
 					"scene": null
+>>>>>>> 42f3bae1a284c682905b5d913b893b3d66b9b0fc
+=======
+					"name": "绘制分享",
+					"pathName": "pages/canvas/main",
+					"scene": null
+>>>>>>> a1c1472fc4bf258ff37c8a60b82bb93f5d0c038e
 				}
 			]
 		}

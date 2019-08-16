@@ -25,7 +25,8 @@ const state = {
     detail:{},//详情数据
     num:[],//数量
     img:[],//图片
-    dq:''//地区
+    dq:'',//地区
+    detailImg:[]
 }
 
 // 模块内的同步改变
@@ -59,11 +60,11 @@ const mutations = {
     },
     //详情所有数据
     getdData(state,payload){
-        console.log("aaaaaa",payload)
+        console.log("payloadddddddd",payload)
         state.detail = payload
     },
     getNum(state,payload){
-        console.log('num...',payload)
+        // console.log('num...',payload)
         state.num = payload
     },
     getImg(state,payload){

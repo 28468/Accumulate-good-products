@@ -3,11 +3,10 @@
     <div class="content" 
     v-for="(item,index) in list"
     :key="index"
+    @click='detail(item)'
     >
       <div class="img">
-        <img
-          :src="item.productVo.mainImgUrl"
-        />
+        <img :src="item.productVo.mainImgUrl" />
       </div>
       <div class="details">
         <div class="title">{{item.productVo.title}}</div>
@@ -27,6 +26,7 @@
   </div>
 </template>
 <script>
+import { mapState, mapMutations, mapActions } from "vuex";
 export default {
   props: {
     list: {
@@ -39,9 +39,22 @@ export default {
     return {};
   },
   computed: {},
-  methods: {},
-  created() {},
-  mounted() {}
+  methods: {
+    ...mapActions({
+      getDetailData: "home/getDetailData",
+      getDetailNum: "home/getDetailNum",
+      getDetailImg: "home/getDetailImg"
+    }),
+    detail(item){
+      let pid=item.productVo.jumpUrl.split("product")[1].split("&")[1].split("=")[1]
+      this.getDetailData(pid)
+      this.getDetailNum(pid)
+      this.getDetailImg(pid)
+      wx.navigateTo({ url: "searchDetail/main" });
+    }
+  },
+  created() { },
+  mounted() { }
 };
 </script>
 <style scoped lang="scss">
