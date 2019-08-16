@@ -4,46 +4,30 @@
       <input placeholder="搜索" disabled/>
     </div>
     <nav class="_scroll">
-      <li 
-      v-for="(item,index) in tab"
-      :key="index"
-      :class="[index===ind?'active':'null']"
-      @click="click(item,index)"
-      >{{item.cname}}</li>
+      <li v-for="(item,index) in tab" :key="index" :class="[index===ind?'active':'null']" @click="click(item,index)">{{item.cname}}</li>
     </nav>
     <section class="main">
       <div class="conter">
         <div class="swiper">
-             <swiper class="u-wrp-bnr" autoplay="true" indicator-dots='true'>
-                <swiper-item class="u-item" 
-                v-for="(item,index) in swiper"
-                :key="index"
-                >
-                  <image :src='item.imgUrl' class='u-img-slide' mode='aspectFill'></image>
-                </swiper-item>
-            </swiper>
+          <swiper class="u-wrp-bnr" autoplay="true" indicator-dots='true'>
+            <swiper-item class="u-item" v-for="(item,index) in swiper" :key="index">
+              <image :src='item.imgUrl' class='u-img-slide' mode='aspectFill'></image>
+            </swiper-item>
+          </swiper>
         </div>
         <div class="conter-nav">
-          <dl v-for="(item,index) in nav"
-          :key="index"
-          >
+          <dl v-for="(item,index) in nav" :key="index" @click="gotoDetails(item)">
             <dt>
-              <img
-                :src="item.imgUrl"
-              />
+              <img :src="item.imgUrl" />
             </dt>
             <dd>{{item.title}}</dd>
           </dl>
         </div>
         <div class="bao">
-          <img
-            :src="tu"
-          />
+          <img :src="tu" />
         </div>
         <div class="tu">
-          <img
-            src="https://jnup.oss-cn-beijing.aliyuncs.com/product/82bbf5eb5ec638aa1a471ae2b0126eee.jpg?x-oss-process=style/small"
-          />
+          <img src="https://jnup.oss-cn-beijing.aliyuncs.com/product/82bbf5eb5ec638aa1a471ae2b0126eee.jpg?x-oss-process=style/small" />
         </div>
         <div class="selected">
           <div class="nav">
@@ -54,9 +38,7 @@
         </div>
         <homeDl :dl="dl"></homeDl>
         <div class="tu">
-          <img
-            :src="tu2"
-          />
+          <img :src="tu2" />
         </div>
         <div class="selected">
           <div class="nav">
@@ -67,9 +49,7 @@
         </div>
         <homeDl :dl='dl1'></homeDl>
         <div class="tu">
-          <img
-            :src="tu3"
-          />
+          <img :src="tu3" />
         </div>
         <div class="selected">
           <div class="nav">
@@ -80,9 +60,7 @@
         </div>
         <homeDl :dl='dl2'></homeDl>
         <div class="tu">
-          <img
-            :src="tu3"
-          />
+          <img :src="tu3" />
         </div>
         <div class="selected">
           <div class="nav">
@@ -93,9 +71,7 @@
         </div>
         <homeDl :dl='dl3'></homeDl>
         <div class="tu">
-          <img
-            :src="tu5"
-          />
+          <img :src="tu5" />
         </div>
         <div class="selected">
           <div class="nav">
@@ -148,30 +124,36 @@ export default {
       dl3: state => state.home.dl3,
       tu5: state => state.home.tu5,
       dl4: state => state.home.dl4,
-      tab:state => state.home.tab,
-      listData:state => state.home.listData,
-      ind:state => state.home.ind
+      tab: state => state.home.tab,
+      listData: state => state.home.listData,
+      ind: state => state.home.ind
     }),
   },
   methods: {
     ...mapActions({
       getData: 'home/getData',
-      getNavData:'home/getNavData',
-      getLData:'home/getLData',
-      getInd:'home/getInd'
+      getNavData: 'home/getNavData',
+      getLData: 'home/getLData',
+      getInd: 'home/getInd',
+      getTopicList: 'topic/getTopicList'
     }),
-    click(item,index){
-      this.getInd({index,item})
+    click(item, index) {
+      this.getInd({ index, item })
       wx.navigateTo({ url: "classify/main" });
+    },
+    gotoDetails(item, index) {
+      this.getTopicList(item.contentValue)
+      wx.navigateTo({ url: 'topic/main' })
+      console.log(item)
     }
   },
-  created() {},
-  onShow(){
+  created() { },
+  onShow() {
     this.getData()
     this.getNavData()
     this.getLData()
   },
-  mounted() {}
+  mounted() { }
 };
 </script>
 <style scoped lang="scss">
@@ -190,11 +172,11 @@ export default {
       background: #eee;
     }
   }
-  ::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-  color: transparent;
-}
+   ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+  }
   ._scroll {
     width: 100%;
     display: flex;
@@ -230,29 +212,28 @@ export default {
         margin-bottom: 20rpx;
         margin-top: 10rpx;
         box-sizing: border-box;
-       .u-wrp-bnr{
-         width:100%;
-height:39.5vw;
-box-sizing:border-box;
-display: block;
-     .u-item{
-       position:absolute;
-width:100%;
-height:100%;
-transform:translate(0%, 0px) translateZ(0px);
- display:block;
-overflow:hidden;
-will-change:transform;
- image{
-   height:100%;
-width:100%;
-border-radius:10rpx;
-display:inline-block;
-overflow:hidden;
-
- }
-     }
-       }
+        .u-wrp-bnr {
+          width: 100%;
+          height: 39.5vw;
+          box-sizing: border-box;
+          display: block;
+          .u-item {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform: translate(0%, 0px) translateZ(0px);
+            display: block;
+            overflow: hidden;
+            will-change: transform;
+            image {
+              height: 100%;
+              width: 100%;
+              border-radius: 10rpx;
+              display: inline-block;
+              overflow: hidden;
+            }
+          }
+        }
       }
       .conter-nav {
         display: flex;
@@ -332,6 +313,7 @@ overflow:hidden;
     }
   }
 }
+
 .list {
   width: 100%;
   .selected {

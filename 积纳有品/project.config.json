@@ -5,7 +5,7 @@
 	},
 	"setting": {
 		"urlCheck": false,
-		"es6": false,
+		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
@@ -30,11 +30,8 @@
 		"hidedInDevtools": []
 	},
 	"scripts": {},
-<<<<<<< HEAD
-=======
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
->>>>>>> 70bc0e6c3a342ab777ccd03bdb155184a0ba09b7
 	"condition": {
 		"search": {
 			"current": -1,
@@ -52,7 +49,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 5,
+			"current": 8,
 			"list": [
 				{
 					"id": -1,
@@ -108,6 +105,12 @@
 					"name": "我的订单",
 					"pathName": "pages/wode/person/main",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "绘制分享",
+					"pathName": "pages/canvas/main",
 					"scene": null
 				}
 			]

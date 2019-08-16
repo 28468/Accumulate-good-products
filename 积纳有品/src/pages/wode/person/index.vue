@@ -1,12 +1,69 @@
 <template>
   <div class='order'>
     <div class='tab'>
-      <li>全部</li>
-      <li>待付款</li>
-      <li>待发货</li>
-      <li>待收货</li>
+      <li :class="{'selected':tab === 1,'testTitle':true}" @click="changTab(1)">全部</li>
+      <li :class="{'selected':tab === 2,'testTitle':true}" @click="changTab(2)">待付款</li>
+      <li :class="{'selected':tab === 3,'testTitle':true}" @click="changTab(3)">待发货</li>
+      <li :class="{'selected':tab === 4,'testTitle':true}" @click="changTab(4)">待收货</li>
     </div>
-    <div class="store">
+    <div class="storePay" v-if="tab===1">
+      <div class="storeCon">
+        <p class="tit">2019-02-89 17:28:30
+          <label>待付款</label>
+        </p>
+        <div class="storeList">
+          <img src="../../../../static/images/niaobushi.png" alt="">
+          <div class="block">
+            <span class="produce">帮宝适你爱不是的啥的会的还是看好多对对对但是宿舍多多多</span>
+            <small>规格: XL</small>
+            <p class="priceList">
+              <span class="price">￥79</span>
+              <span>X1</span>
+            </p>
+          </div>
+        </div>
+        <div class="priceNum">
+          共
+          <span class="sum">2</span>件商品 合计：￥
+          <span class="sumPrice">43.90</span>
+        </div>
+        <div class="priceNum">
+          <button class="refuse">取消订单</button>
+          <button class="goPay">去付款
+            <span class="pay">13.09</span>元</button>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="storePay" v-if="tab===2">
+      <div class="storeCon">
+        <p class="tit">2019-02-89 17:28:30
+          <label>待付款</label>
+        </p>
+        <div class="storeList">
+          <img src="../../../../static/images/niaobushi.png" alt="">
+          <div class="block">
+            <span class="produce">帮宝适你爱不是的啥的会的还是看好多对对对但是宿舍多多多</span>
+            <small>规格: XL</small>
+            <p class="priceList">
+              <span class="price">￥79</span>
+              <span>X1</span>
+            </p>
+          </div>
+        </div>
+        <div class="priceNum">
+          共
+          <span class="sum">2</span>件商品 合计：￥
+          <span class="sumPrice">43.90</span>
+        </div>
+        <div class="priceNum">
+          <button class="refuse">取消订单</button>
+          <button class="goPay">去付款
+            <span class="pay">13.09</span>元</button>
+        </div>
+
+      </div>
       <div class="storeCon">
         <p class="tit">2019-02-89 17:28:30
           <label>待收货</label>
@@ -34,43 +91,63 @@
         </div>
 
       </div>
-      <!-- <div class="storeCon">
-                  <p class="tit">2019-02-89 17:28:30
-                    <label>待收货</label>
-                  </p>
-                  <div>
-                    <img src="../../../../static/images/niaobushi.png" alt="">
-                    <div class="block">
-                      <span class="produce">帮宝适你爱不是的啥的会的还是看好多对对对但是宿舍多多多</span>
-                      <small>规格: XL</small>
-                      <p>
-                        <span class="price">￥79</span>
-                        <span>X1</span>
-                      </p>
-                    </div>
-                  </div>
-                  <div>
-                    <img src="../../../../static/images/niaobushi.png" alt="">
-                    <div class="block">
-                      <span class="produce">帮宝适你爱不是的啥的会的还是看好多对对对但是宿舍多多多</span>
-                      <small>规格: XL</small>
-                      <p class="priceCon">
-                        <span class="price">￥79</span>
-                        <span>X1</span>
-                      </p>
-                    </div>
-                  </div>
-                  <p class="priceNum">
-                    共
-                    <span class="sum">2</span>件商品 合计：￥
-                    <span class="sumPrice">43.90</span>
-                  </p>
-                  <p class="btns">
-                    <div class="refuse">取消订单</div>
-                    <div class="goPay">去付款
-                      <span class="pay">13.09</span>元</div>
-                  </p>
-                </div> -->
+    </div>
+    <div class="storeSend" v-if="tab===3">
+      <div class="storeCon">
+        <p class="tit">2019-02-89 17:28:30
+          <label>待发货</label>
+        </p>
+        <div class="storeList">
+          <img src="../../../../static/images/niaobushi.png" alt="">
+          <div class="block">
+            <span class="produce">帮宝适你爱不是的啥的会的还是看好多对对对但是宿舍多多多</span>
+            <small>规格: XL</small>
+            <p class="priceList">
+              <span class="price">￥79</span>
+              <span>X1</span>
+            </p>
+            <div class="priceNum">
+              共
+              <span class="sum">2</span>件商品 合计：￥
+              <span class="sumPrice">43.90</span>
+            </div>
+          </div>
+        </div>
+        <div class="look">
+          查看物流
+        </div>
+        <div class="comfirm">
+          确认收货
+        </div>
+
+      </div>
+
+    </div>
+    <div class="storeReceive" v-if="tab===4">
+      <div class="storeCon">
+        <p class="tit">2019-02-89 17:28:30
+          <label>待收货</label>
+        </p>
+        <div class="storeList">
+          <img src="../../../../static/images/niaobushi.png" alt="">
+          <div class="block">
+            <span class="produce">帮宝适你爱不是的啥的会的还是看好多对对对但是宿舍多多多</span>
+            <small>规格: XL</small>
+            <p class="priceList">
+              <span class="price">￥79</span>
+              <span>X1</span>
+            </p>
+          </div>
+        </div>
+        <div class="look">
+          查看物流
+        </div>
+        <div class="comfirm">
+          确认收货
+        </div>
+
+      </div>
+
     </div>
 
   </div>
@@ -82,7 +159,12 @@ export default {
   },
   data() {
     return {
-
+      tab: 1
+    }
+  },
+  methods: {
+    changTab(index) {
+      this.tab = index;
     }
   }
 
@@ -108,10 +190,25 @@ export default {
 
   .tab li {
     flex: 1;
+    height: 100%;
     text-align: center;
   }
+  .selected {
+    color: #87caee;
+    border-bottom: 1px solid #87caee;
+  }
 
-  .store {
+  .storePay {
+    width: 100%;
+    height: auto;
+    margin-top: 100rpx;
+  }
+  .storeSend {
+    width: 100%;
+    height: auto;
+    margin-top: 100rpx;
+  }
+  .storeReceive {
     width: 100%;
     height: auto;
     margin-top: 100rpx;
@@ -188,30 +285,30 @@ export default {
     height: 60rpx;
     line-height: 60rpx;
     text-align: right;
-    font-size: 28rpx;
-    margin-top:20rpx;
+    margin-top: 20rpx;
   }
   .refuse {
-    font-size: 20rpx;
+    font-size: 25rpx;
     display: inline-block;
-    width: 150rpx;
+    width: 170rpx;
     height: 50rpx;
     line-height: 50rpx;
     text-align: center;
     border: solid 2rpx #C0C0C0;
     border-radius: 10rpx;
-    margin-right:30rpx;
+    margin-right: 30rpx;
   }
 
   .goPay {
-    font-size: 20rpx;
+    font-size: 25rpx;
     display: inline-block;
-    width: 200rpx;
+    width: 220rpx;
     height: 50rpx;
     text-align: center;
     background: #F08080;
     border-radius: 10rpx;
     color: white;
+    padding-bottom: 50rpx;
   }
 }
 </style>

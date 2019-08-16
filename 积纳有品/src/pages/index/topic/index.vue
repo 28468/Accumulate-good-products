@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper">
     <div class="banner" v-for='(item,index) in list' :key='index'>
-      <!-- <div><img :src="item.specialImg" /></div> -->
-      <p>{{item.specialName}}</p>
+      <div><img :src="list.specialImg" /></div>
+      <p>{{list.specialName}}</p>
     </div>
     <div class="tit">
       <img src="../../../../static/images/right.png" alt="">
@@ -76,11 +76,11 @@ export default {
   },
   methods: {
     ...mapActions({
-      getTopicList: "topic/getTopicList",
+   
     })
   },
   created() {
-    this.getTopicList({ siid: 127 })
+   
   },
   mounted() {
 

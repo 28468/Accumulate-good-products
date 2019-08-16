@@ -1,13 +1,8 @@
 <template>
   <div class="lists">
-    <div class="content" 
-    v-for="(item,index) in list"
-    :key="index"
-    >
+    <div class="content" v-for="(item,index) in list" :key="index">
       <div class="img">
-        <img
-          :src="item.productVo.mainImgUrl"
-        />
+        <img :src="item.productVo.mainImgUrl" />
       </div>
       <div class="details">
         <div class="title">{{item.productVo.title}}</div>
@@ -41,21 +36,21 @@ export default {
   },
   computed: {},
   methods: {
-     ...mapActions({
+    ...mapActions({
       getDetailData: "home/getDetailData",
       getDetailNum: "home/getDetailNum",
       getDetailImg: "home/getDetailImg"
     }),
-    detail(item){
-      let pid=item.jumpUrl.split("product")[1].split("&")[1].split("=")[1]
+    detail(item) {
+      let pid = item.jumpUrl.split("product")[1].split("&")[1].split("=")[1]
       this.getDetailData(pid)
       this.getDetailNum(pid)
       this.getDetailImg(pid)
       wx.navigateTo({ url: "searchDetail/main" });
     }
   },
-  created() {},
-  mounted() {}
+  created() { },
+  mounted() { }
 };
 </script>
 <style scoped lang="scss">
