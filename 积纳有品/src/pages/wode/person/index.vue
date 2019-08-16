@@ -1,10 +1,10 @@
 <template>
   <div class='order'>
     <div class='tab'>
-      <li >全部</li>
-      <li>待付款</li>
-      <li>待发货</li>
-      <li>待收货</li>
+      <li :class="{'selected':tab === 1,'testTitle':true}" @click="changTab(1)">全部</li>
+      <li :class="{'selected':tab === 2,'testTitle':true}" @click="changTab(2)">待付款</li>
+      <li :class="{'selected':tab === 3,'testTitle':true}" @click="changTab(3)">待发货</li>
+      <li :class="{'selected':tab === 4,'testTitle':true}" @click="changTab(4)">待收货</li>
     </div>
     <div class="storePay" v-if="tab===1">
       <div class="storeCon">
@@ -309,6 +309,14 @@ export default {
     border-radius: 10rpx;
     color: white;
     padding-bottom: 50rpx;
+  }
+  .testTitle {
+    flex: 1;
+    text-align: center;
+  }
+  .selected {
+    color: #87caee;
+    border-bottom: 1px solid #87caee;
   }
 }
 </style>
