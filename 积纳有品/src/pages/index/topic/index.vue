@@ -95,7 +95,6 @@ export default {
       }
     }
   }
-
   .main {
     height: 100vh;
     box-sizing: border-box;
@@ -126,7 +125,6 @@ export default {
         margin-top: 60rpx;
       }
     }
-
     .topicList {
       width: 100%;
       display: flex;

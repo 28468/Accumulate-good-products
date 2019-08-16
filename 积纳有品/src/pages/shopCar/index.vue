@@ -42,12 +42,14 @@
   </div>
 </template>
 <script>
+import { mapState, mapActions } from "vuex";
 export default {
   props:{
   },
   components:{
   },
-  data(){
+  data() {
+    var num = 0;
     return {
     }
   },

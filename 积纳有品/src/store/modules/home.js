@@ -25,7 +25,8 @@ const state = {
     detail:{},//详情数据
     num:[],//数量
     img:[],//图片
-    dq:''//地区
+    dq:'',//地区
+    detailImg:[]
 }
 
 // 模块内的同步改变

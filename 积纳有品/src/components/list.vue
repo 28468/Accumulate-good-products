@@ -6,9 +6,7 @@
     @click='detail(item)'
     >
       <div class="img">
-        <img
-          :src="item.productVo.mainImgUrl"
-        />
+        <img :src="item.productVo.mainImgUrl" />
       </div>
       <div class="details">
         <div class="title">{{item.productVo.title}}</div>
@@ -42,7 +40,7 @@ export default {
   },
   computed: {},
   methods: {
-     ...mapActions({
+    ...mapActions({
       getDetailData: "home/getDetailData",
       getDetailNum: "home/getDetailNum",
       getDetailImg: "home/getDetailImg"
@@ -55,8 +53,8 @@ export default {
       wx.navigateTo({ url: "searchDetail/main" });
     }
   },
-  created() {},
-  mounted() {}
+  created() { },
+  mounted() { }
 };
 </script>
 <style scoped lang="scss">
