@@ -16,7 +16,8 @@ const mutations = {
 // 模块内的异步改变
 const actions = {
    async getTopicList({ commit }, payload) {
-    const res = await topicInfo({sild:payload});
+    const res = await topicInfo({siid:payload});
+    console.log(payload)
     //console.log(res,'专题数据res')
     commit("getAll", res.result);
     console.log('result',res)

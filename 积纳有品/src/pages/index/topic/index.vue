@@ -1,17 +1,17 @@
 <template>
   <div class="wrapper">
-    <div class="banner" v-for='(item,index) in list' :key='index'>
+    <div class="banner">
       <div><img :src="list.specialImg" /></div>
       <p>{{list.specialName}}</p>
     </div>
     <div class="tit">
       <img src="../../../../static/images/right.png" alt="">
-      <span>南靖特产专区</span>
+      <span>{{list.specialName}}</span>
       <img src="../../../../static/images/right.png" alt="">
     </div>
     <div class="topicList">
-      <div>
-        <img src="../../../../static/images/topicList.png" alt="">
+      <div v-for="(item,index) in list.anchors" :key='index'>
+     
         <div class="block">
           <span class="produce">10致大海的的华师大的时候大会收到货到时候跌Hi好山东矿机别的班</span>
           <p>
@@ -20,36 +20,7 @@
           </p>
         </div>
       </div>
-      <div>
-        <img src="../../../../static/images/topicList.png" alt="">
-        <div class="block">
-          <span class="produce">10致大海的的华师大的时候大会收到货到时候跌Hi好山东矿机别的班</span>
-          <p>
-            <span class="price">￥79</span>
-            <small>赚￥3.44元</small>
-          </p>
-        </div>
-      </div>
-      <div>
-        <img src="../../../../static/images/topicList.png" alt="">
-        <div class="block">
-          <span class="produce">10致大海的的华师大的时候大会收到货到时候跌Hi好山东矿机别的班</span>
-          <p>
-            <span class="price">￥79</span>
-            <small>赚￥3.44元</small>
-          </p>
-        </div>
-      </div>
-      <div>
-        <img src="../../../../static/images/topicList.png" alt="">
-        <div class="block">
-          <span class="produce">10致大海的的华师大的时候大会收到货到时候跌Hi好山东矿机别的班</span>
-          <p>
-            <span class="price">￥79</span>
-            <small>赚￥3.44元</small>
-          </p>
-        </div>
-      </div>
+
     </div>
   </div>
 </template>
@@ -76,11 +47,11 @@ export default {
   },
   methods: {
     ...mapActions({
-   
+
     })
   },
   created() {
-   
+
   },
   mounted() {
 
@@ -98,7 +69,6 @@ export default {
     background: white;
     img {
       width: 100%;
-      height: 80%;
     }
     p {
       width: 100%;
@@ -117,6 +87,7 @@ export default {
     line-height: 180rpx;
     align-items: center;
     font-size: 30rpx;
+    margin-top: 100rpx;
     img {
       width: 100rpx;
       height: 30rpx;
