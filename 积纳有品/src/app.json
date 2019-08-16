@@ -1,10 +1,11 @@
 {
   "pages": [
     "pages/index/canvas/main",
+    "pages/index/detail/main",
+    "pages/wode/prove/main",
     "pages/wode/person/main",
     "pages/index/share/main",
     "pages/wode/personDetail/main",
-    "pages/wode/prove/main",
     "pages/index/classify/main",
     "pages/index/searchDetail/main",
     "pages/shopCar/main",
@@ -38,7 +39,7 @@
         "pagePath": "pages/shopCar/main",
         "text": "购物车",
         "iconpath": "static/tabs/car1.png",
-        "selectedIconPath": "static/tabs/car1.png"
+        "selectedIconPath": "static/tabs/car2.png"
       },
       {
         "pagePath": "pages/wode/main",

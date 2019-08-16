@@ -1,7 +1,7 @@
 <template>
   <div class='order'>
     <div class='tab'>
-      <li>全部</li>
+      <li >全部</li>
       <li>待付款</li>
       <li>待发货</li>
       <li>待收货</li>
